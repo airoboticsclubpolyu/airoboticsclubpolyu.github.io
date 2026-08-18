@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Student leadership portrait placeholder</title>
+  <desc id="desc">A simple placeholder portrait for student leadership members.</desc>
+  <rect width="640" height="640" fill="#f6f7f9"/>
+  <rect x="36" y="36" width="568" height="568" rx="32" fill="#ffffff" stroke="#dde2ea" stroke-width="8"/>
+  <circle cx="320" cy="250" r="92" fill="#a02337" opacity="0.92"/>
+  <path d="M178 500c22-92 82-142 142-142s120 50 142 142" fill="#0077a7" opacity="0.88"/>
+  <path d="M148 510h344" stroke="#16171a" stroke-width="18" stroke-linecap="round" opacity="0.16"/>
+  <text x="320" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#5d6574">Student Leader</text>
+</svg>
