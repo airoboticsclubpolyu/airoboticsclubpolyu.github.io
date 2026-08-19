@@ -116,6 +116,19 @@ const getSummary = (body) =>
     .find((block) => block && !block.startsWith("<!--") && !block.startsWith("#") && !block.startsWith("- "))
     ?.replace(/\s+/g, " ") || "";
 
+const formatEventDate = (value = "TBC") => {
+  const trimmed = String(value).trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+    const parsed = new Date(`${trimmed}T00:00:00`);
+    return new Intl.DateTimeFormat(undefined, {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    }).format(parsed);
+  }
+  return trimmed.toUpperCase() === "TBC" ? "Date pending" : trimmed;
+};
+
 const renderEventCard = (event, index) => {
   const { meta, body } = event;
   const tags = Array.isArray(meta.tags) ? meta.tags : String(meta.tags || "").split(",");
@@ -123,10 +136,15 @@ const renderEventCard = (event, index) => {
   const category = meta.category || tagText.join(" ").toLowerCase();
   const image = meta.image || "images/club/promotion-table.jpg";
   const summary = getSummary(body);
+  const eventStatusLabel = category.split(" ").includes("past") ? "Past" : "Upcoming";
 
   return `
     <article class="event-card" data-filter-item data-category="${escapeHtml(category)}">
       <button class="event-card-button" type="button" data-event-index="${index}" aria-label="Open details for ${escapeHtml(meta.title)}">
+        <span class="event-date-block">
+          <strong>${escapeHtml(formatEventDate(meta.date))}</strong>
+          <span>${eventStatusLabel}</span>
+        </span>
         <span class="event-card-cover" style="background-image: url('${escapeHtml(image)}')"></span>
         <span class="event-card-content">
           <span class="event-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-calendar"></use></svg></span>
@@ -134,7 +152,7 @@ const renderEventCard = (event, index) => {
           <h3>${escapeHtml(meta.title || "Untitled Event")}</h3>
           <p>${inlineEventText(summary)}</p>
           <span class="event-meta">
-            <span>Date: ${escapeHtml(meta.date || "TBC")}</span>
+            <span>Date: ${escapeHtml(formatEventDate(meta.date))}</span>
             <span>Location: ${escapeHtml(meta.location || "TBC")}</span>
           </span>
         </span>
@@ -148,12 +166,12 @@ const openEventDialog = (event) => {
   const tags = Array.isArray(meta.tags) ? meta.tags.join(", ") : meta.tags || "Event";
 
   eventDialogContent.innerHTML = `
-    <img class="event-detail-image" src="${escapeHtml(meta.image || "images/club/promotion-table.jpg")}" alt="">
+    <img class="event-detail-image" src="${escapeHtml(meta.image || "images/club/promotion-table.jpg")}" width="1600" height="900" decoding="async" alt="${escapeHtml(meta.title || "Club event")}">
     <div class="event-detail-body">
       <span class="eyebrow">${escapeHtml(tags)}</span>
-      <h2>${escapeHtml(meta.title || "Untitled Event")}</h2>
+      <h2 id="event-dialog-title">${escapeHtml(meta.title || "Untitled Event")}</h2>
       <div class="event-meta">
-        <span>Date: ${escapeHtml(meta.date || "TBC")}</span>
+        <span>Date: ${escapeHtml(formatEventDate(meta.date))}</span>
         <span>Location: ${escapeHtml(meta.location || "TBC")}</span>
       </div>
       <div class="event-rich-text">${eventContentToHtml(body)}</div>
@@ -163,16 +181,34 @@ const openEventDialog = (event) => {
   eventDialog.showModal();
 };
 
-const applyEventFilter = (filter) => {
+const applyEventFilter = (filter, updateUrl = true) => {
+  let visibleCount = 0;
   document.querySelectorAll("[data-event-filter]").forEach((button) => {
-    button.classList.toggle("is-active", button.getAttribute("data-event-filter") === filter);
+    const isActive = button.getAttribute("data-event-filter") === filter;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
   });
 
   document.querySelectorAll("[data-filter-item]").forEach((item) => {
     const categories = item.getAttribute("data-category") || "";
     const shouldShow = filter === "all" || categories.split(" ").includes(filter);
     item.classList.toggle("is-hidden", !shouldShow);
+    if (shouldShow) visibleCount += 1;
   });
+
+  if (eventStatus) {
+    eventStatus.hidden = false;
+    eventStatus.textContent = visibleCount
+      ? `${visibleCount} event${visibleCount === 1 ? "" : "s"} shown`
+      : "No events match this filter. Try another category or contact the club for updates.";
+  }
+
+  if (updateUrl) {
+    const url = new URL(window.location.href);
+    if (filter === "all") url.searchParams.delete("filter");
+    else url.searchParams.set("filter", filter);
+    window.history.replaceState({}, "", url);
+  }
 };
 
 const loadEvents = async () => {
@@ -193,11 +229,11 @@ const loadEvents = async () => {
       button.addEventListener("click", () => openEventDialog(events[Number(button.dataset.eventIndex)]));
     });
 
-    if (eventStatus) {
-      eventStatus.hidden = true;
-    }
-
-    applyEventFilter("all");
+    const requestedFilter = new URLSearchParams(window.location.search).get("filter") || "all";
+    const initialFilter = Array.from(eventFilterButtons).some(
+      (button) => button.getAttribute("data-event-filter") === requestedFilter
+    ) ? requestedFilter : "all";
+    applyEventFilter(initialFilter, false);
   } catch (error) {
     if (eventStatus) {
       eventStatus.hidden = false;

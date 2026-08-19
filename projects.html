@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
   <title>Projects | PolyU AI &amp; Robotics Club</title>
   <meta name="description" content="Explore PolyU AI and Robotics Club project tracks for robot dogs, self-driving logistics vehicles, AI perception, embedded systems, and integrated robotics engineering.">
   <meta property="og:title" content="Projects | PolyU AI &amp; Robotics Club">
@@ -12,7 +13,7 @@
   <link rel="icon" href="images/robotic_logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -65,20 +66,22 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="project-portfolio" class="section project-portfolio-section">
       <div class="section-inner">
-        <div class="filter-bar" data-filter-group data-filter-target="[data-filter-item]">
-          <button class="filter-button is-active" type="button" data-filter="all">All</button>
-          <button class="filter-button" type="button" data-filter="mechanical">Mechanical</button>
-          <button class="filter-button" type="button" data-filter="electronics">Electronics</button>
-          <button class="filter-button" type="button" data-filter="perception">Perception &amp; AI</button>
-          <button class="filter-button" type="button" data-filter="software">Software</button>
-          <button class="filter-button" type="button" data-filter="logistics">Logistics</button>
+        <div class="filter-bar" data-filter-group data-filter-target="[data-filter-item]" aria-label="Project filters">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="mechanical" aria-pressed="false">Mechanical</button>
+          <button class="filter-button" type="button" data-filter="electronics" aria-pressed="false">Electronics</button>
+          <button class="filter-button" type="button" data-filter="perception" aria-pressed="false">Perception &amp; AI</button>
+          <button class="filter-button" type="button" data-filter="software" aria-pressed="false">Software</button>
+          <button class="filter-button" type="button" data-filter="logistics" aria-pressed="false">Logistics</button>
         </div>
+        <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
 
         <div class="grid grid-3">
           <article class="project-card" data-filter-item data-category="mechanical electronics software perception">
-            <div class="card-media">
+            <div class="card-media photo">
+              <img loading="lazy" decoding="async" src="images/club/team-exchange.jpg" width="1500" height="1125" alt="Students discussing robotics hardware during a team session">
               <strong>Robot Dog Module Study</strong>
             </div>
             <div class="card-body">
@@ -94,7 +97,8 @@
           </article>
 
           <article class="project-card" data-filter-item data-category="mechanical electronics software perception logistics">
-            <div class="card-media">
+            <div class="card-media photo">
+              <img loading="lazy" decoding="async" src="images/club/robot-platform.jpg" width="1500" height="844" alt="Autonomous mobile robot platform with sensors and electronics">
               <strong>Self-Driving Logistics Vehicle</strong>
             </div>
             <div class="card-body">
@@ -110,7 +114,8 @@
           </article>
 
           <article class="project-card" data-filter-item data-category="perception software">
-            <div class="card-media">
+            <div class="card-media photo">
+              <img loading="lazy" decoding="async" src="images/club/hands-on-training.jpg" width="1500" height="1125" alt="Students testing robotics systems during hands-on training">
               <strong>Vision, SLAM &amp; Edge AI</strong>
             </div>
             <div class="card-body">
@@ -126,7 +131,8 @@
           </article>
 
           <article class="project-card" data-filter-item data-category="electronics software mechanical">
-            <div class="card-media">
+            <div class="card-media photo">
+              <img loading="lazy" decoding="async" src="images/club/robot-training-bench.jpg" width="1500" height="1125" alt="Robot hardware and electronics arranged on a training bench">
               <strong>Embedded Systems &amp; Reliability</strong>
             </div>
             <div class="card-body">
@@ -172,17 +178,32 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="images/robotic_logo.svg" width="1600" height="1131" alt="">
-        <span>PolyU AI &amp; Robotics Club</span>
-      </a>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
-        <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+      <div class="footer-about">
+        <a class="footer-brand" href="index.html">
+          <img loading="lazy" decoding="async" src="images/robotic_logo.svg" width="1600" height="1131" alt="">
+          <span>PolyU AI &amp; Robotics Club</span>
+        </a>
+        <p>A student engineering community for robotics, AI, competitions, and practical project learning.</p>
       </div>
-      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Student community website.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="about.html">Vision</a>
+          <a href="projects.html">Projects</a>
+          <a href="competition.html">Competition</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer-column">
+          <h2>Connect</h2>
+          <a href="events.html">Events</a>
+          <a href="join.html">Join the Club</a>
+          <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
+          <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+        </div>
+      </nav>
+      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Faculty of Engineering student community.</p>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
