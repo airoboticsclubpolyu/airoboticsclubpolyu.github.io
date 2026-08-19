@@ -4,18 +4,33 @@ const navToggle = document.querySelector(".nav-toggle");
 const primaryNav = document.querySelector(".primary-nav");
 
 if (navToggle && primaryNav) {
+  const setNavigationOpen = (isOpen, returnFocus = false) => {
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    primaryNav.classList.toggle("is-open", isOpen);
+    document.body.classList.toggle("nav-open", isOpen);
+    if (!isOpen && returnFocus) navToggle.focus();
+  };
+
   navToggle.addEventListener("click", () => {
-    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!isOpen));
-    primaryNav.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("nav-open", !isOpen);
+    setNavigationOpen(navToggle.getAttribute("aria-expanded") !== "true");
   });
 
   primaryNav.addEventListener("click", (event) => {
     if (event.target.closest("a")) {
-      navToggle.setAttribute("aria-expanded", "false");
-      primaryNav.classList.remove("is-open");
-      document.body.classList.remove("nav-open");
+      setNavigationOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
+      setNavigationOpen(false, true);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1040 && navToggle.getAttribute("aria-expanded") === "true") {
+      setNavigationOpen(false);
     }
   });
 }
@@ -40,20 +55,44 @@ document.querySelectorAll("[data-filter-group]").forEach((group) => {
   const buttons = group.querySelectorAll("[data-filter]");
   const targetSelector = group.getAttribute("data-filter-target");
   const items = targetSelector ? document.querySelectorAll(targetSelector) : [];
+  const status = document.querySelector("[data-filter-status]");
+
+  const applyFilter = (filter, updateUrl = true) => {
+    let visibleCount = 0;
+    buttons.forEach((button) => {
+      const isActive = button.getAttribute("data-filter") === filter;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    items.forEach((item) => {
+      const categories = item.getAttribute("data-category") || "";
+      const shouldShow = filter === "all" || categories.split(" ").includes(filter);
+      item.classList.toggle("is-hidden", !shouldShow);
+      if (shouldShow) visibleCount += 1;
+    });
+
+    if (status) status.textContent = `${visibleCount} project${visibleCount === 1 ? "" : "s"} shown`;
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (filter === "all") url.searchParams.delete("filter");
+      else url.searchParams.set("filter", filter);
+      window.history.replaceState({}, "", url);
+    }
+  };
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const filter = button.getAttribute("data-filter");
-      buttons.forEach((item) => item.classList.remove("is-active"));
-      button.classList.add("is-active");
-
-      items.forEach((item) => {
-        const categories = item.getAttribute("data-category") || "";
-        const shouldShow = filter === "all" || categories.split(" ").includes(filter);
-        item.classList.toggle("is-hidden", !shouldShow);
-      });
+      applyFilter(filter);
     });
   });
+
+  const requestedFilter = new URLSearchParams(window.location.search).get("filter") || "all";
+  const initialFilter = Array.from(buttons).some((button) => button.getAttribute("data-filter") === requestedFilter)
+    ? requestedFilter
+    : "all";
+  applyFilter(initialFilter, false);
 });
 
 document.querySelectorAll(".faq-question").forEach((button) => {
@@ -63,6 +102,7 @@ document.querySelectorAll(".faq-question").forEach((button) => {
     button.setAttribute("aria-expanded", String(!isOpen));
     if (answer) {
       answer.classList.toggle("is-open", !isOpen);
+      answer.hidden = isOpen;
     }
   });
 });
@@ -102,25 +142,25 @@ document.querySelectorAll("[data-panel-group]").forEach((group) => {
 
   const panels = group.querySelectorAll("[data-panel]");
   const showPanelFromHash = () => {
-    const hashValue = window.location.hash.replace("#", "");
-    if (!hashValue) {
-      return;
-    }
+    const links = document.querySelectorAll("[data-panel-link]");
+    const requestedValue = window.location.hash.replace("#", "");
+    const defaultValue = panels[0]?.getAttribute("data-panel");
+    const activeValue = Array.from(panels).some((panel) => panel.getAttribute("data-panel") === requestedValue)
+      ? requestedValue
+      : defaultValue;
 
-    let matchedPanel = false;
     panels.forEach((panel) => {
-      const isActive = panel.getAttribute("data-panel") === hashValue;
-      matchedPanel = matchedPanel || isActive;
+      const isActive = panel.getAttribute("data-panel") === activeValue;
       panel.hidden = !isActive;
       panel.classList.toggle("is-active", isActive);
     });
 
-    if (!matchedPanel) {
-      panels.forEach((panel, index) => {
-        panel.hidden = index !== 0;
-        panel.classList.toggle("is-active", index === 0);
-      });
-    }
+    links.forEach((link) => {
+      const isActive = link.getAttribute("href") === `#${activeValue}`;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
   };
 
   showPanelFromHash();

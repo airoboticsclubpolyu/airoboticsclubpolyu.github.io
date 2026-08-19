@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
   <title>Join | PolyU AI &amp; Robotics Club</title>
   <meta name="description" content="Join PolyU AI and Robotics Club and review the transparent three-level recruitment, promotion, probation, and evaluation rules.">
   <meta property="og:title" content="Join | PolyU AI &amp; Robotics Club">
@@ -12,7 +13,7 @@
   <link rel="icon" href="images/robotic_logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -53,7 +54,7 @@
     <section class="page-hero join-hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="kicker">Join The Club</p>
+          <p class="kicker">Join the Club</p>
           <h1 class="page-title">Join through a transparent three-level pathway.</h1>
           <p class="lead">
             Whether you are new to robotics or already building systems, the club gives you clear expectations for learning, contribution, promotion, leadership, and competition roles.
@@ -64,8 +65,8 @@
             <span class="visual-tag"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-users"></use></svg>Build with teams</span>
           </div>
           <div class="actions">
-            <a class="button" href="mailto:robosig@connect.polyu.hk">Email the Club</a>
-            <a class="button secondary" href="mailto:robosig@connect.polyu.hk">Ask a Question</a>
+            <a class="button" href="mailto:robosig@connect.polyu.hk?subject=Joining%20PolyU%20AI%20%26%20Robotics%20Club">Email Recruitment Team</a>
+            <a class="button secondary" href="events.html?filter=recruitment">View Recruitment Events</a>
           </div>
         </div>
         <div class="card accent">
@@ -83,7 +84,17 @@
       </div>
     </section>
 
-    <section class="section">
+    <nav class="page-index" aria-label="On this page">
+      <div class="section-inner page-index-inner">
+        <span>Your Joining Path</span>
+        <a href="#joining-steps">Getting Started</a>
+        <a href="#membership-levels">Membership Levels</a>
+        <a href="#joining-faq">FAQ</a>
+        <a href="#recruitment-contact">Contact</a>
+      </div>
+    </nav>
+
+    <section id="joining-steps" class="section">
       <div class="section-inner">
         <div class="section-heading">
           <div>
@@ -92,7 +103,7 @@
           </div>
           <p>Students can start with orientation, choose a technical direction, and grow through workshops, projects, and team activities.</p>
         </div>
-        <div class="grid grid-4">
+        <div class="grid grid-4 join-steps">
           <article class="card">
             <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-mail"></use></svg></span>
             <span class="eyebrow">Step 1</span>
@@ -121,7 +132,7 @@
       </div>
     </section>
 
-    <section class="section band recruitment-guidelines-section">
+    <section id="membership-levels" class="section band recruitment-guidelines-section">
       <div class="section-inner">
         <div class="section-heading">
           <div>
@@ -160,7 +171,7 @@
         <div class="promotion-artifact-board">
           <article class="rule-panel artifact-panel">
             <div class="artifact-panel-head">
-              <span class="path-badge">3 -> 2</span>
+              <span class="path-badge">3 → 2</span>
               <div>
                 <h3>Level 3 to Level 2</h3>
                 <p>Four visible artifacts show foundation and contribution.</p>
@@ -188,7 +199,7 @@
 
           <article class="rule-panel artifact-panel featured-artifact-panel">
             <div class="artifact-panel-head">
-              <span class="path-badge">2 -> 1</span>
+              <span class="path-badge">2 → 1</span>
               <div>
                 <h3>Level 2 to Level 1</h3>
                 <p>Meet at least four requirements.</p>
@@ -253,7 +264,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="joining-faq" class="section">
       <div class="section-inner">
         <div class="section-heading">
           <div>
@@ -263,38 +274,38 @@
         </div>
         <div class="faq">
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
+            <button id="faq-button-1" class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1">
               Do I need robotics experience before joining?
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
-            <div id="faq-1" class="faq-answer">
+            <div id="faq-1" class="faq-answer" role="region" aria-labelledby="faq-button-1" hidden>
               <p>No. Beginners can start with guided workshops and foundation tasks. Experience helps, but curiosity and consistency matter most.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
+            <button id="faq-button-2" class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2">
               Which technical area should I choose?
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
-            <div id="faq-2" class="faq-answer">
+            <div id="faq-2" class="faq-answer" role="region" aria-labelledby="faq-button-2" hidden>
               <p>You can begin with the area that interests you most, then move across tracks as you learn how full robotics systems connect.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
+            <button id="faq-button-3" class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3">
               Can experienced students lead projects?
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
-            <div id="faq-3" class="faq-answer">
+            <div id="faq-3" class="faq-answer" role="region" aria-labelledby="faq-button-3" hidden>
               <p>Yes. Experienced members can help lead project modules, mentor teammates, prepare competitions, and improve technical documentation.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
+            <button id="faq-button-4" class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4">
               How do I get the latest recruitment information?
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
-            <div id="faq-4" class="faq-answer">
+            <div id="faq-4" class="faq-answer" role="region" aria-labelledby="faq-button-4" hidden>
               <p>Use the contact emails on this page. Confirmed event dates and joining details can be shared by the club directly.</p>
             </div>
           </div>
@@ -302,7 +313,7 @@
       </div>
     </section>
 
-    <section class="section band">
+    <section id="recruitment-contact" class="section band">
       <div class="section-inner">
         <div>
           <p class="kicker">Recruitment</p>
@@ -319,17 +330,32 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="images/robotic_logo.svg" width="1600" height="1131" alt="">
-        <span>PolyU AI &amp; Robotics Club</span>
-      </a>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
-        <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+      <div class="footer-about">
+        <a class="footer-brand" href="index.html">
+          <img loading="lazy" decoding="async" src="images/robotic_logo.svg" width="1600" height="1131" alt="">
+          <span>PolyU AI &amp; Robotics Club</span>
+        </a>
+        <p>A student engineering community for robotics, AI, competitions, and practical project learning.</p>
       </div>
-      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Student community website.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="about.html">Vision</a>
+          <a href="projects.html">Projects</a>
+          <a href="competition.html">Competition</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer-column">
+          <h2>Connect</h2>
+          <a href="events.html">Events</a>
+          <a href="join.html">Join the Club</a>
+          <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
+          <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+        </div>
+      </nav>
+      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Faculty of Engineering student community.</p>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
