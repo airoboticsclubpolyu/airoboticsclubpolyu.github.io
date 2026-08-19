@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
   <title>PolyU AI &amp; Robotics Club</title>
   <meta name="description" content="PolyU AI and Robotics Club is a Faculty of Engineering platform nurturing a world-leading robotics club and students who learn AI and robotics through real systems, competitions, and leadership growth.">
   <meta property="og:title" content="PolyU AI &amp; Robotics Club">
@@ -13,7 +14,7 @@
   <link rel="icon" href="images/robotic_logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -57,7 +58,7 @@
           <p class="kicker">The Hong Kong Polytechnic University</p>
           <h1>PolyU AI &amp; Robotics Club</h1>
           <p class="lead">
-            Our vision is to nurture a world-leading robotics club and a community of students through a Faculty of Engineering platform where students learn AI and robotics by building real systems, joining competition teams, and growing from curious beginners into capable engineers and leaders.
+            Build real robots, develop intelligent systems, and grow from curious beginner to capable engineering leader within PolyU's Faculty of Engineering community.
           </p>
           <div class="visual-tags" aria-label="Club strengths">
             <span class="visual-tag"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-bot"></use></svg>Robot dogs</span>
@@ -103,24 +104,34 @@
           </div>
           <p>Members work across hardware, software, AI, control, and system integration while learning how real robotics teams operate.</p>
         </div>
-        <div class="grid grid-3">
-          <article class="card accent">
+        <div class="grid home-bento">
+          <article class="card accent home-bento-card bento-featured">
             <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-bot"></use></svg></span>
             <span class="eyebrow">Robotics</span>
             <h3>Robot Dog Platforms</h3>
             <p>Explore quadruped mobility, sensing, obstacle traversal, rescue tasks, and practical control workflows.</p>
+            <a class="text-link" href="projects.html">Explore Projects</a>
           </article>
-          <article class="card accent">
+          <article class="card accent home-bento-card">
             <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-cpu"></use></svg></span>
             <span class="eyebrow">Autonomy</span>
             <h3>Self-Driving Logistics Vehicles</h3>
             <p>Develop navigation, obstacle avoidance, route planning, payload handling, and campus-style delivery systems.</p>
+            <a class="text-link" href="projects.html?filter=logistics">View Logistics Work</a>
           </article>
-          <article class="card accent">
+          <article class="card accent home-bento-card">
             <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-trophy"></use></svg></span>
             <span class="eyebrow">Competitions</span>
             <h3>Rescue and Applied Robotics</h3>
             <p>Prepare for contests that emphasize disaster response, inspection, navigation, and multi-robot coordination.</p>
+            <a class="text-link" href="competition.html">See Competition Tracks</a>
+          </article>
+          <article class="card home-bento-card bento-community">
+            <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-users"></use></svg></span>
+            <span class="eyebrow">Community</span>
+            <h3>Training and Member Growth</h3>
+            <p>Start with guided workshops, contribute to a technical team, and progress through transparent membership levels.</p>
+            <a class="text-link" href="join.html">See the Joining Path</a>
           </article>
         </div>
       </div>
@@ -135,10 +146,10 @@
           </div>
           <a class="button ghost" href="projects.html">View All Projects</a>
         </div>
-        <div class="grid grid-3">
-          <article class="project-card">
+        <div class="grid home-project-bento">
+          <article class="project-card home-project-featured">
             <div class="card-media photo">
-              <img src="images/club/team-exchange.jpg" width="1500" height="1125" alt="Members discussing robotics hardware and platforms">
+              <img loading="lazy" decoding="async" src="images/club/team-exchange.jpg" width="1500" height="1125" alt="Members discussing robotics hardware and platforms">
               <strong>Robot Dog Platform</strong>
             </div>
             <div class="card-body">
@@ -153,7 +164,7 @@
           </article>
           <article class="project-card">
             <div class="card-media photo">
-              <img src="images/club/robot-platform.jpg" width="1500" height="844" alt="Autonomous robot platform hardware with sensors and electronics">
+              <img loading="lazy" decoding="async" src="images/club/robot-platform.jpg" width="1500" height="844" alt="Autonomous robot platform hardware with sensors and electronics">
               <strong>Self-Driving Logistics Vehicle</strong>
             </div>
             <div class="card-body">
@@ -168,7 +179,7 @@
           </article>
           <article class="project-card">
             <div class="card-media photo">
-              <img src="images/club/robot-training-bench.jpg" width="1500" height="1125" alt="Robotics training bench with tools and hardware">
+              <img loading="lazy" decoding="async" src="images/club/robot-training-bench.jpg" width="1500" height="1125" alt="Robotics training bench with tools and hardware">
               <strong>Embedded Systems</strong>
             </div>
             <div class="card-body">
@@ -218,17 +229,32 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="images/robotic_logo.svg" width="1600" height="1131" alt="">
-        <span>PolyU AI &amp; Robotics Club</span>
-      </a>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
-        <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+      <div class="footer-about">
+        <a class="footer-brand" href="index.html">
+          <img loading="lazy" decoding="async" src="images/robotic_logo.svg" width="1600" height="1131" alt="">
+          <span>PolyU AI &amp; Robotics Club</span>
+        </a>
+        <p>A student engineering community for robotics, AI, competitions, and practical project learning.</p>
       </div>
-      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Student community website.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="about.html">Vision</a>
+          <a href="projects.html">Projects</a>
+          <a href="competition.html">Competition</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer-column">
+          <h2>Connect</h2>
+          <a href="events.html">Events</a>
+          <a href="join.html">Join the Club</a>
+          <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
+          <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+        </div>
+      </nav>
+      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Faculty of Engineering student community.</p>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>

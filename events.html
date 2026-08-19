@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
   <title>Events | PolyU AI &amp; Robotics Club</title>
   <meta name="description" content="Workshops, training sessions, recruitment events, and competition preparation for PolyU AI and Robotics Club members.">
   <meta property="og:title" content="Events | PolyU AI &amp; Robotics Club">
@@ -12,7 +13,7 @@
   <link rel="icon" href="images/robotic_logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -68,16 +69,16 @@
     <section class="section">
       <div class="section-inner">
         <div class="filter-bar" aria-label="Event filters">
-          <button class="filter-button is-active" type="button" data-event-filter="all">All</button>
-          <button class="filter-button" type="button" data-event-filter="upcoming">Upcoming</button>
-          <button class="filter-button" type="button" data-event-filter="training">Training</button>
-          <button class="filter-button" type="button" data-event-filter="competition">Competition</button>
-          <button class="filter-button" type="button" data-event-filter="recruitment">Recruitment</button>
-          <button class="filter-button" type="button" data-event-filter="past">Past</button>
+          <button class="filter-button is-active" type="button" data-event-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-event-filter="upcoming" aria-pressed="false">Upcoming</button>
+          <button class="filter-button" type="button" data-event-filter="training" aria-pressed="false">Training</button>
+          <button class="filter-button" type="button" data-event-filter="competition" aria-pressed="false">Competition</button>
+          <button class="filter-button" type="button" data-event-filter="recruitment" aria-pressed="false">Recruitment</button>
+          <button class="filter-button" type="button" data-event-filter="past" aria-pressed="false">Past</button>
         </div>
 
-        <p class="event-list-status" data-event-status>Loading events...</p>
-        <div class="grid grid-3" data-event-grid>
+        <p class="event-list-status" data-event-status role="status" aria-live="polite">Loading events…</p>
+        <div class="grid event-timeline" data-event-grid>
           <noscript>
             <article class="card">
               <h3>Event details are loading interactively.</h3>
@@ -101,32 +102,49 @@
             <a class="button secondary" href="mailto:robosig@connect.polyu.hk">Contact Organizers</a>
           </div>
         </div>
-        <figure class="photo-panel logo-panel">
-          <img src="images/robotic_logo.jpg" width="1719" height="1215" alt="PolyU AI and Robotics Club logo">
+        <figure class="photo-panel">
+          <img loading="lazy" decoding="async" src="images/club/training-room.jpg" width="1500" height="1000" alt="Students participating in a robotics training session">
           <figcaption>Workshops and sharing sessions help members learn robotics through practical experience.</figcaption>
         </figure>
       </div>
     </section>
   </main>
 
-  <dialog class="event-dialog" data-event-dialog aria-label="Event details">
+  <dialog class="event-dialog" data-event-dialog aria-labelledby="event-dialog-title">
     <div class="event-dialog-panel">
       <button class="event-dialog-close" type="button" data-event-dialog-close aria-label="Close event details">Close</button>
-      <div data-event-dialog-content></div>
+      <div data-event-dialog-content>
+        <h2 class="visually-hidden" id="event-dialog-title">Event details</h2>
+      </div>
     </div>
   </dialog>
 
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="footer-inner">
-      <a class="footer-brand" href="index.html">
-        <img src="images/robotic_logo.svg" width="1600" height="1131" alt="">
-        <span>PolyU AI &amp; Robotics Club</span>
-      </a>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
-        <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+      <div class="footer-about">
+        <a class="footer-brand" href="index.html">
+          <img loading="lazy" decoding="async" src="images/robotic_logo.svg" width="1600" height="1131" alt="">
+          <span>PolyU AI &amp; Robotics Club</span>
+        </a>
+        <p>A student engineering community for robotics, AI, competitions, and practical project learning.</p>
       </div>
-      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Student community website.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="about.html">Vision</a>
+          <a href="projects.html">Projects</a>
+          <a href="competition.html">Competition</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div class="footer-column">
+          <h2>Connect</h2>
+          <a href="events.html">Events</a>
+          <a href="join.html">Join the Club</a>
+          <a href="mailto:robosig@connect.polyu.hk">robosig@connect.polyu.hk</a>
+          <a href="mailto:robotics.polyu@gmail.com">robotics.polyu@gmail.com</a>
+        </div>
+      </nav>
+      <p class="footer-note">&copy; 2026 PolyU AI &amp; Robotics Club. Faculty of Engineering student community.</p>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
