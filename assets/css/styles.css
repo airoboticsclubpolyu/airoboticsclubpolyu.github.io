@@ -427,6 +427,7 @@ main {
 h1,
 h2,
 h3,
+h4,
 p {
   overflow-wrap: anywhere;
 }
@@ -911,9 +912,37 @@ h3 {
 .project-card h3,
 .event-card h3,
 .person-card h3,
+.person-card h4,
 .tier-card h3,
 .rule-panel h3 {
   color: var(--ink);
+}
+
+.person-card h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.person-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.department-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  line-height: 1;
 }
 
 .card p,
@@ -2089,8 +2118,26 @@ h3 {
   width: min(100%, 620px);
 }
 
-.deputy-level {
+.co-supervisor-level {
+  width: min(100%, 1120px);
   border-top-color: var(--accent);
+}
+
+.co-supervisor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.co-supervisor-card {
+  width: 100%;
+  border-top-color: var(--accent);
+}
+
+.co-supervisor-card .text-link {
+  margin-top: auto;
+  padding-top: 14px;
 }
 
 .tier-connector {
@@ -2731,6 +2778,7 @@ h3 {
   .grid-3,
   .grid-4,
   .mentor-grid,
+  .co-supervisor-grid,
   .rule-grid,
   .level-pathway,
   .promotion-artifact-board,
@@ -2885,6 +2933,7 @@ h3 {
   .grid-3,
   .grid-4,
   .mentor-grid,
+  .co-supervisor-grid,
   .rule-grid,
   .level-pathway,
   .promotion-artifact-board,
