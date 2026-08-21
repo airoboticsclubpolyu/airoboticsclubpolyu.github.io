@@ -136,7 +136,9 @@ Important files:
 - `.nojekyll` keeps GitHub Pages from hiding folders that start with `_`, including `_event/`.
 - `_config.yml` includes `_event/` for compatibility.
 
-After pushing changes to the GitHub Pages branch, GitHub Pages should serve the site automatically according to the repository settings.
+The `.github/workflows/deploy-pages.yml` workflow publishes the repository root when changes are pushed to `main`. It can also be started manually from the Actions tab.
+
+In the repository's **Settings > Pages > Build and deployment** section, set **Source** to **GitHub Actions**. After the workflow succeeds, GitHub Pages serves the uploaded static site artifact.
 
 ## Maintenance Checklist
 
