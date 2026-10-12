@@ -357,6 +357,10 @@ main {
   --hero-image: url("../../images/club/promotion-booth.jpg");
 }
 
+.qa-hero {
+  --hero-image: url("../../images/past-seasons/2025-2026/member-training-group.jpg");
+}
+
 .hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
@@ -2682,6 +2686,53 @@ h3 {
 
 .faq-answer.is-open {
   display: block;
+}
+
+.faq-answer ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.faq-answer p + p,
+.faq-answer p + ul {
+  margin-top: 10px;
+}
+
+.faq-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  color: var(--ink);
+  font-weight: 850;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.faq-link::after {
+  flex: 0 0 auto;
+  color: var(--polyu-red);
+  content: "\2192";
+}
+
+.faq-link:hover,
+.faq-link:focus-visible {
+  border-color: var(--polyu-red);
+  color: var(--polyu-red);
+}
+
+.qa-checklist {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.review-heading {
+  margin: 40px 0 16px;
 }
 
 .contact-list {

@@ -8,14 +8,16 @@ This website introduces the club, its technical areas, projects, events, team st
 
 Main pages:
 
-- `index.html` - homepage with hero, club focus areas, featured projects, activities, and recruitment call-to-action.
-- `about.html` - mission, technical areas, growth system, and member pathway.
-- `projects.html` - project cards with category filtering.
-- `competition.html` - competition tracks, preparation workflow, roles, and joining call-to-action.
-- `events.html` - event archive and upcoming events generated from Markdown files in `_event/`.
-- `past-seasons.html` - season archive with a dropdown for past club seasons and memories.
-- `team.html` - team structure, technical groups, and advisor/partner section.
-- `join.html` - joining path, FAQ, and contact information.
+- `index.html` - homepage with hero, key numbers, club focus areas, featured projects, club life photos, popular questions, and recruitment call-to-action.
+- `about.html` - vision, technical areas, club structure, and a short summary of the three membership levels.
+- `projects.html` - project tracks with category filtering, plus competition tracks, preparation workflow, and roles.
+- `events.html` - upcoming and past events generated from Markdown files in `_event/`, plus the season-by-season archive.
+- `team.html` - faculty leadership, supervisors, mentors, student committee, technical groups, alumni, and supporting labs.
+- `qa.html` - questions and answers grouped by joining, time and levels, projects and competitions, and events and contact.
+- `join.html` - joining steps, full membership and review rules, and contact information.
+- `competition.html` and `past-seasons.html` - redirects to `projects.html#competitions` and `events.html#past-seasons` so old links keep working.
+
+Each piece of content lives on one page only. The full membership rules are on `join.html`; other pages link there instead of repeating them. Add new questions to `qa.html` rather than to individual pages.
 
 ## Folder Structure
 
