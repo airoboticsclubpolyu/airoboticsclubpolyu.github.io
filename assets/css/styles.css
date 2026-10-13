@@ -1322,6 +1322,19 @@ p {
   white-space: nowrap;
 }
 
+.person .group-tag.both {
+  color: #fff;
+  background: var(--red);
+}
+
+.board-title {
+  margin: 30px 0 16px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
 /* People */
 
 .avatar {
