@@ -29,10 +29,11 @@ if (navToggle && primaryNav) {
   });
 }
 
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
-document.querySelectorAll(".primary-nav a").forEach((link) => {
-  if (link.getAttribute("href") === currentPage) link.setAttribute("aria-current", "page");
-});
+const newsRows = document.querySelector(".news-rows");
+if (newsRows && window.location.hash.length > 1) {
+  const legacy = newsRows.querySelector(`a[href="news/${CSS.escape(window.location.hash.slice(1))}.html"]`);
+  if (legacy) window.location.replace(legacy.href);
+}
 
 document.querySelectorAll(".faq-question").forEach((button) => {
   button.addEventListener("click", () => {
