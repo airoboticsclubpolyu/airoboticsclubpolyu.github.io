@@ -82,7 +82,8 @@
 </ul>
 <h2>Stage 1: the maths behind robots</h2>
 <p>Linear algebra describes where things are and how they move. A robot's pose in the plane is a rotation and a translation, and both can be written as one matrix. Chaining these matrices gives the position of a gripper, a camera or a foot.</p>
-<div class="eq">\[R(\theta) = \begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}, \qquad T = \begin{bmatrix} R &amp; \mathbf{t} \\ \mathbf{0}^{\top} &amp; 1 \end{bmatrix}\]</div>
+<div class="eq">\[R(\theta) = \begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}\]</div>
+<div class="eq">\[T = \begin{bmatrix} R &amp; \mathbf{t} \\ \mathbf{0}^{\top} &amp; 1 \end{bmatrix}\]</div>
 <div class="eq">\[\mathbf{p}_{\text{world}} = T\,\mathbf{p}_{\text{robot}}\]</div>
 <p>Calculus gives velocities and gradients, and probability lets a robot reason about noisy sensors. You do not need all of it before starting, but you will meet all three in every group.</p>
 <ul class="link-list">
@@ -127,7 +128,7 @@ for epoch in range(100):
 </ul>
 <h2>Stage 2: feedback control</h2>
 <p>Every motor, drone and robot dog runs a feedback loop: measure the error between where you are and where you want to be, and correct it. The PID controller is the place to start. The proportional term reacts to the error now, the integral term removes a steady offset, and the derivative term damps oscillation.</p>
-<div class="eq">\[u(t) = K_p\,e(t) + K_i \int_0^t e(\tau)\,d\tau + K_d\,\frac{de(t)}{dt}\]</div>
+<div class="eq">\[\begin{aligned} u(t) = {}&amp; K_p\,e(t) + K_i \int_0^t e(\tau)\,d\tau \\ &amp;+ K_d\,\frac{de(t)}{dt} \end{aligned}\]</div>
 <p>Here \(e(t) = r(t) - y(t)\) is the error between the target \(r\) and the measurement \(y\), and \(u\) is the command sent to the motor.</p>
 <pre><code class="language-python">class PID:
     def __init__(self, kp, ki, kd, dt):

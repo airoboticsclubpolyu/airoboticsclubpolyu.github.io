@@ -97,7 +97,7 @@
         <div class="formula-grid">
           <div class="formula-card">
             <h3>PID control</h3>
-            <div class="formula">\[u(t) = K_p\,e(t) + K_i \int_0^t e(\tau)\,d\tau + K_d\,\frac{de(t)}{dt}\]</div>
+            <div class="formula">\[\begin{aligned} u(t) = {}&amp; K_p\,e(t) + K_i \int_0^t e(\tau)\,d\tau \\ &amp;+ K_d\,\frac{de(t)}{dt} \end{aligned}\]</div>
             <p>The most widely used controller in robotics, from motor speed to drone attitude.</p>
           </div>
           <div class="formula-card">
@@ -107,7 +107,7 @@
           </div>
           <div class="formula-card">
             <h3>Model predictive control</h3>
-            <div class="formula">\[\min_{u_{0:N-1}} \sum_{k=0}^{N-1} \lVert x_k - x_k^{\text{ref}} \rVert_Q^2 + \lVert u_k \rVert_R^2 \;\; \text{s.t.}\;\; x_{k+1} = f(x_k, u_k)\]</div>
+            <div class="formula">\[\begin{aligned} \min_{u_{0:N-1}} \; &amp; \sum_{k=0}^{N-1} \lVert x_k - x_k^{\text{ref}} \rVert_Q^2 + \lVert u_k \rVert_R^2 \\ \text{s.t.} \; &amp; x_{k+1} = f(x_k, u_k) \end{aligned}\]</div>
             <p>Plans the next N control inputs to follow a reference while respecting the robot dynamics.</p>
           </div>
           <div class="formula-card">

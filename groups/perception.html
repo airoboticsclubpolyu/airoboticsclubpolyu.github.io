@@ -107,7 +107,7 @@
           </div>
           <div class="formula-card">
             <h3>Kalman filter: update</h3>
-            <div class="formula">\[\begin{aligned} K_k &amp;= P_{k|k-1}H^{\top}\left(H P_{k|k-1} H^{\top} + R\right)^{-1} \\ \hat{x}_k &amp;= \hat{x}_{k|k-1} + K_k\left(z_k - H\,\hat{x}_{k|k-1}\right) \end{aligned}\]</div>
+            <div class="formula">\[\begin{aligned} S_k &amp;= H P_{k|k-1} H^{\top} + R \\ K_k &amp;= P_{k|k-1}H^{\top} S_k^{-1} \\ \hat{x}_k &amp;= \hat{x}_{k|k-1} + K_k\left(z_k - H\,\hat{x}_{k|k-1}\right) \end{aligned}\]</div>
             <p>Corrects the prediction with a measurement z such as a GNSS fix or a visual landmark.</p>
           </div>
           <div class="formula-card">
