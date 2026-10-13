@@ -754,6 +754,20 @@ p {
   line-height: 1.5;
 }
 
+.intense-line {
+  max-width: 880px;
+  margin: 14px 0 0;
+  padding-left: 14px;
+  color: var(--muted);
+  font-size: 15.5px;
+  border-left: 3px solid var(--red);
+}
+
+.intense-line a {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .vision {
   margin: 0 0 16px;
   padding: 16px 20px;
@@ -1657,6 +1671,221 @@ p {
 
 .note.announce {
   margin: 0 0 30px;
+}
+
+.note.intense {
+  margin: 26px 0 30px;
+  color: #d0d5dd;
+  background: #0d1117 radial-gradient(circle at 0% 0%, rgba(160, 35, 55, 0.55), transparent 60%);
+  border-left: 4px solid #e0566e;
+}
+
+.note.intense h2 {
+  color: #fff;
+}
+
+.section > .container > .note.intense:first-child {
+  max-width: 900px;
+  margin-top: 0;
+}
+
+/* What you gain: a typical path */
+
+.journey-title {
+  margin: 30px 0 14px;
+  font-size: 18px;
+}
+
+.journey {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey li {
+  position: relative;
+  padding: 16px 16px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid #e39aa8;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.journey li:nth-child(2) {
+  border-top-color: #d4798b;
+}
+
+.journey li:nth-child(3) {
+  border-top-color: #c8576a;
+}
+
+.journey li.goal {
+  color: #d0d5dd;
+  background: #0d1117 radial-gradient(circle at 100% 0%, rgba(160, 35, 55, 0.6), transparent 60%);
+  border-color: #0d1117;
+  border-top-color: var(--red);
+}
+
+.journey li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid var(--red);
+  border-right: 3px solid var(--red);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.journey-year {
+  display: block;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journey li.goal .journey-year {
+  color: #f4a7b4;
+}
+
+.journey strong {
+  display: block;
+  margin: 4px 0 6px;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.journey li.goal strong {
+  color: #fff;
+}
+
+.journey li > span:last-child {
+  display: block;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.journey-note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Member tier diagram */
+
+.tier-ladder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: end;
+  margin: 22px 0 6px;
+}
+
+.rung {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 14px;
+  color: #fff;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.rung.r3 {
+  min-height: 210px;
+  background: linear-gradient(160deg, #d98a99, #c06478);
+}
+
+.rung.r2 {
+  min-height: 250px;
+  background: linear-gradient(160deg, #c8576a, #a8364c);
+}
+
+.rung.r1 {
+  min-height: 290px;
+  background: linear-gradient(160deg, #a02337, #6e1424);
+}
+
+.rung:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  right: -15px;
+  z-index: 1;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 12px solid var(--red);
+}
+
+.rung-tier {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.rung strong {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.rung-places {
+  margin: 2px 0 10px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.rung ul {
+  margin: auto 0 0;
+  padding-left: 18px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.tier-ladder figcaption {
+  grid-column: 1 / -1;
+  padding-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  border-top: 3px solid var(--ink);
+}
+
+@media (max-width: 860px) {
+  .journey {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey li:nth-child(2)::after {
+    content: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .journey,
+  .tier-ladder {
+    grid-template-columns: 1fr;
+  }
+
+  .journey li::after,
+  .rung::after {
+    content: none !important;
+  }
+
+  .rung.r1,
+  .rung.r2,
+  .rung.r3 {
+    min-height: 0;
+    border-radius: var(--radius);
+  }
 }
 
 .section > .container > .note.rules:first-child {
