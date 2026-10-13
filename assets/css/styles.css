@@ -2963,3 +2963,11 @@ p {
     transition: none !important;
   }
 }
+
+.photo-credit {
+  margin: 14px 0 0;
+  font-size: 0.76rem;
+  color: var(--muted, #6b7280);
+  opacity: 0.85;
+}
+.photo-credit a { color: inherit; text-decoration: underline; }
