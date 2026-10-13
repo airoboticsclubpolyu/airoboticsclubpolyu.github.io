@@ -754,6 +754,18 @@ p {
   line-height: 1.5;
 }
 
+.vision-note {
+  max-width: 880px;
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.vision-note a {
+  font-weight: 600;
+}
+
 .intense-line {
   max-width: 880px;
   margin: 14px 0 0;
