@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a02337">
+  <title>Electronics &amp; Embedded Systems | PolyU FENG AI &amp; Robotics Club</title>
+  <meta name="description" content="The Electronics &amp; Embedded Systems group of the PolyU FENG AI &amp; Robotics Club: power systems, PCBs, motor control, firmware and communication.">
+  <meta property="og:title" content="Electronics &amp; Embedded Systems | PolyU FENG AI &amp; Robotics Club">
+  <meta property="og:description" content="The Electronics &amp; Embedded Systems group of the PolyU FENG AI &amp; Robotics Club: power systems, PCBs, motor control, firmware and communication.">
+  <meta property="og:image" content="../images/past-seasons/2025-2026/robocon-pit-debugging.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/club-logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="PolyU FENG AI and Robotics Club home">
+        <img src="../images/logo/club-logo-192.png" width="192" height="192" alt="">
+        <span>
+          <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
+          <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html" aria-current="page">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../news.html">News</a>
+        <a href="../team.html">Team</a>
+        <a href="../qa.html">Q&amp;A</a>
+        <a href="../donate.html">Donate</a>
+        <a class="nav-cta" href="../join.html">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner sub-banner" style="background-image: url('../images/past-seasons/2025-2026/robocon-pit-debugging.jpg')">
+      <div class="container">
+        <div>
+          <p class="kicker">Technical group</p>
+          <h1>Electronics &amp; Embedded Systems</h1>
+          <p>The robot's nervous system: power, circuit boards, motor drivers and firmware</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../about.html">About</a> / <a href="../about.html#groups">Technical groups</a> / <span>Electronics &amp; Embedded Systems</span></nav>
+        <div class="sub-intro">
+          <div class="sub-text">
+            <p>The Electronics &amp; Embedded Systems group gives the robot power and connects every part of it. Members design the battery and power system, build circuit boards and wiring, drive the motors and write the firmware on the microcontrollers that read sensors and send commands.</p>
+            <p>Most robot failures at competitions are electrical: a loose connector, a brown-out or a noisy signal. This group designs for reliability and safety, with fuses, emergency stops, clear wiring standards and tests before every run.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Mentor</dt><dd>Yang Mokui</dd></div>
+            <div><dt>Student representatives</dt><dd>To be announced after the 2026 placement</dd></div>
+            <div><dt>Tools</dt><dd>KiCad or Altium, STM32 and ESP32, CAN bus, oscilloscopes, bench power supplies</dd></div>
+            <div><dt>Works on</dt><dd>Robot power systems, motor control for Robocon and the robot dog, sensor interfaces for drones and vehicles</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">What the group works on</h2>
+        </div>
+        <div class="task-grid">
+          <div><h3>Power systems</h3><p>Battery choice, power distribution, fuses, voltage regulators and the emergency-stop circuit.</p></div>
+          <div><h3>PCB design</h3><p>Schematics, layout and assembly of control, driver and interface boards.</p></div>
+          <div><h3>Motor control</h3><p>Motor drivers, encoders and current and speed loops for wheels, arms and leg joints.</p></div>
+          <div><h3>Embedded firmware</h3><p>Real-time code on STM32 and ESP32 microcontrollers: drivers, timing and fault handling.</p></div>
+          <div><h3>Communication</h3><p>CAN, UART, SPI and I2C between boards, and the link to the onboard computer.</p></div>
+          <div><h3>Wiring and testing</h3><p>Harnesses, connectors, labelling, noise reduction and test procedures before every run.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section dark formula-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Engineering foundations</h2>
+        </div>
+        <p class="section-lead">A few of the equations members use in this group. Training sessions build up to them step by step.</p>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h3>Battery runtime</h3>
+            <div class="formula">\[t \approx \frac{C\,V_{\text{nom}}\,\eta}{P_{\text{avg}}}\]</div>
+            <p>Estimated operating time from battery capacity C, nominal voltage, system efficiency and average power draw.</p>
+          </div>
+          <div class="formula-card">
+            <h3>DC motor model</h3>
+            <div class="formula">\[\tau = K_t\,I, \qquad V = I\,R + K_e\,\omega\]</div>
+            <p>Torque is proportional to current; the supply voltage covers the resistive drop and the back-EMF at speed ω.</p>
+          </div>
+          <div class="formula-card">
+            <h3>PWM average voltage</h3>
+            <div class="formula">\[V_{\text{avg}} = D\,V_{\text{bus}}\]</div>
+            <p>A motor driver sets the effective voltage through the duty cycle D of its switching signal.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Conductor loss</h3>
+            <div class="formula">\[P_{\text{loss}} = I^2 R\]</div>
+            <p>Heat in wires and connectors. Used to size cables and choose connectors for high-current motor lines.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Discrete PI current loop</h3>
+            <div class="formula">\[u_k = K_p\,e_k + K_i\,T_s \sum_{j=0}^{k} e_j\]</div>
+            <p>The inner control loop that runs on the microcontroller at a fixed sample time T_s.</p>
+          </div>
+          <div class="formula-card">
+            <h3>RC low-pass filter</h3>
+            <div class="formula">\[f_c = \frac{1}{2\pi R C}\]</div>
+            <p>Cut-off frequency of a simple filter that removes switching noise from sensor signals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">What we expect from members</h2>
+        </div>
+        <p class="section-lead">Expectations grow with the member tier. Tiers are reviewed regularly, so members can move up as their skills grow.</p>
+        <div class="tier-grid">
+          <div><span class="tier-label">Tier 3 · General</span><p>Curiosity about circuits and microcontrollers. Learns soldering and lab safety in introductory sessions.</p></div>
+          <div><span class="tier-label">Tier 2 · Training</span><p>Can read schematics, solder reliably, program a microcontroller and use a multimeter and oscilloscope; follows battery safety rules.</p></div>
+          <div><span class="tier-label">Tier 1 · Advanced</span><p>Owns the electrical design of a robot, designs power and control boards, sets wiring standards and mentors Tier 2 members.</p></div>
+        </div>
+        <p class="prep"><strong>Before you join:</strong> Basic circuit theory, a microcontroller project (Arduino, STM32 or ESP32) and some C programming are good starting points. No member is expected to know everything at the start.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Photos</h2>
+        </div>
+        <div class="photos">
+          <figure><a href="../images/club/robot-training-bench.jpg" target="_blank" rel="noopener"><img src="../images/club/robot-training-bench.jpg" alt="Wiring and testing on the bench" loading="lazy"></a><figcaption>Wiring and testing on the bench.</figcaption></figure>
+          <figure><a href="../images/past-seasons/2025-2026/robocon-pit-debugging.jpg" target="_blank" rel="noopener"><img src="../images/past-seasons/2025-2026/robocon-pit-debugging.jpg" alt="Debugging in the competition pit" loading="lazy"></a><figcaption>Debugging in the competition pit.</figcaption></figure>
+          <figure><a href="../images/club/robot-close-up.jpg" target="_blank" rel="noopener"><img src="../images/club/robot-close-up.jpg" alt="Competition robots and parts on the workbench" loading="lazy"></a><figcaption>Competition robots and parts on the workbench.</figcaption></figure>
+        </div>
+        <h2 class="sibling-title">Other technical groups</h2>
+        <nav class="sibling-nav" aria-label="Technical groups">
+          <a href="mechanical.html">Mechanical Design</a>
+          <span aria-current="page">Electronics &amp; Embedded Systems</span>
+          <a href="perception.html">Perception &amp; Sensors</a>
+          <a href="software-ai.html">Software &amp; AI</a>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <p class="footer-brand"><img src="../images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../news.html">News</a>
+          <a href="../team.html">Team</a>
+          <a href="../qa.html">Q&amp;A</a>
+          <a href="../donate.html">Donate</a>
+          <a href="../join.html">Join Us</a>
+        </nav>
+      </div>
+      <div class="footer-row footer-bottom">
+        <span>&copy; 2026 PolyU FENG AI &amp; Robotics Club. All rights reserved.</span>
+        <span>Contact: <a href="mailto:airoboticsclubpolyu@gmail.com?cc=welson.wen@polyu.edu.hk">airoboticsclubpolyu@gmail.com</a> (cc <a href="mailto:welson.wen@polyu.edu.hk">welson.wen@polyu.edu.hk</a>)</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

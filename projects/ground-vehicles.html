@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a02337">
+  <title>Unmanned ground vehicles | PolyU FENG AI &amp; Robotics Club</title>
+  <meta name="description" content="Unmanned ground vehicle projects at the PolyU FENG AI &amp; Robotics Club: campus delivery, patrol, mapping and logistics.">
+  <meta property="og:title" content="Unmanned ground vehicles | PolyU FENG AI &amp; Robotics Club">
+  <meta property="og:description" content="Unmanned ground vehicle projects at the PolyU FENG AI &amp; Robotics Club: campus delivery, patrol, mapping and logistics.">
+  <meta property="og:image" content="../images/projects/ugv-logistics.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/club-logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="PolyU FENG AI and Robotics Club home">
+        <img src="../images/logo/club-logo-192.png" width="192" height="192" alt="">
+        <span>
+          <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
+          <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../news.html">News</a>
+        <a href="../team.html">Team</a>
+        <a href="../qa.html">Q&amp;A</a>
+        <a href="../donate.html">Donate</a>
+        <a class="nav-cta" href="../join.html">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner sub-banner" style="background-image: url('../images/projects/ugv-logistics.jpg')">
+      <div class="container">
+        <div>
+          <p class="kicker">Robot platform</p>
+          <h1>Unmanned ground vehicles</h1>
+          <p>One wheeled platform for delivery, patrol and mapping</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / <span>Unmanned ground vehicles</span></nav>
+        <div class="sub-intro">
+          <div class="sub-text">
+            <p>Wheeled robots are the most practical way to learn the full autonomy stack: perception, mapping, localisation, planning and control. A single vehicle can switch between tasks by changing its route, payload and software.</p>
+            <p>Our supporting parties include logistics and autonomous driving companies, so teams can work on problems that come from real operations.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Type</dt><dd>Robot platform</dd></div>
+            <div><dt>Applications</dt><dd>Campus delivery, patrol, mapping, logistics</dd></div>
+            <div><dt>Key skills</dt><dd>ROS 2, SLAM, LiDAR and camera fusion, motion planning, vehicle control</dd></div>
+            <div><dt>Who can lead</dt><dd>Tier 1 and Tier 2 members, by proposal</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">The autonomy stack</h2>
+        </div>
+        <p class="section-lead">Every autonomous vehicle runs the same chain of modules, and each maps to a technical group.</p>
+        <ol class="flow">
+          <li><strong>Sensing</strong><span>LiDAR, cameras, GNSS, IMU</span></li>
+          <li><strong>Localisation and mapping</strong><span>Where am I on the map?</span></li>
+          <li><strong>Perception</strong><span>What is around me?</span></li>
+          <li><strong>Planning</strong><span>Which path is safe and efficient?</span></li>
+          <li><strong>Control</strong><span>Steering, throttle and braking</span></li>
+        </ol>
+        <div class="task-grid two">
+          <div><h3>Campus delivery</h3><p>Moving parcels, food and documents between buildings on a planned route.</p></div>
+          <div><h3>Patrol and security</h3><p>Night-time patrols that detect unusual events and report them.</p></div>
+          <div><h3>Inspection and mapping</h3><p>Building and updating 3D maps of campus roads, car parks and facilities.</p></div>
+          <div><h3>Logistics with industry</h3><p>Problems from logistics partners, such as autonomous vans for the last mile.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section dark formula-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Engineering foundations</h2>
+        </div>
+        <p class="section-lead">Two models used in almost every vehicle project.</p>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h3>Kinematic bicycle model</h3>
+            <div class="formula">\[\dot{x} = v\cos\psi, \quad \dot{y} = v\sin\psi, \quad \dot{\psi} = \frac{v}{L}\tan\delta\]</div>
+            <p>Vehicle position and heading from speed v and steering angle δ, with wheelbase L.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Pure pursuit steering</h3>
+            <div class="formula">\[\delta = \arctan\!\left(\frac{2L\sin\alpha}{l_d}\right)\]</div>
+            <p>Steers towards a point on the path a distance l_d ahead, at angle α from the heading.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Photos</h2>
+        </div>
+        <div class="photos">
+          <figure><a href="../images/projects/ugv-logistics.jpg" target="_blank" rel="noopener"><img src="../images/projects/ugv-logistics.jpg" alt="An autonomous logistics van on campus" loading="lazy"></a><figcaption>An autonomous logistics van on campus.</figcaption></figure>
+          <figure><a href="../images/projects/ugv-test.jpg" target="_blank" rel="noopener"><img src="../images/projects/ugv-test.jpg" alt="Obstacle-avoidance test with a small ground robot" loading="lazy"></a><figcaption>Obstacle-avoidance test with a small ground robot.</figcaption></figure>
+          <figure><a href="../images/platforms/logistics-vehicle.jpg" target="_blank" rel="noopener"><img src="../images/platforms/logistics-vehicle.jpg" alt="Autonomous test cars on the PolyU campus" loading="lazy"></a><figcaption>Autonomous test cars on the PolyU campus.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="section sibling">
+      <div class="container">
+        <h2 class="sibling-title">Other projects</h2>
+        <nav class="sibling-nav" aria-label="Projects">
+          <a href="robocon-2027.html">Robocon 2027</a>
+          <a href="robot-dog-build.html">Robot dog build</a>
+          <a href="drones.html">Drones</a>
+          <a href="robot-dogs.html">Robot dogs</a>
+          <span aria-current="page">Unmanned ground vehicles</span>
+        </nav>
+        <p class="back-link"><a href="../projects.html">&larr; All projects</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <p class="footer-brand"><img src="../images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../news.html">News</a>
+          <a href="../team.html">Team</a>
+          <a href="../qa.html">Q&amp;A</a>
+          <a href="../donate.html">Donate</a>
+          <a href="../join.html">Join Us</a>
+        </nav>
+      </div>
+      <div class="footer-row footer-bottom">
+        <span>&copy; 2026 PolyU FENG AI &amp; Robotics Club. All rights reserved.</span>
+        <span>Contact: <a href="mailto:airoboticsclubpolyu@gmail.com?cc=welson.wen@polyu.edu.hk">airoboticsclubpolyu@gmail.com</a> (cc <a href="mailto:welson.wen@polyu.edu.hk">welson.wen@polyu.edu.hk</a>)</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

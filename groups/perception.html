@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a02337">
+  <title>Perception &amp; Sensors | PolyU FENG AI &amp; Robotics Club</title>
+  <meta name="description" content="The Perception &amp; Sensors group of the PolyU FENG AI &amp; Robotics Club: sensor calibration, localisation, mapping and detection.">
+  <meta property="og:title" content="Perception &amp; Sensors | PolyU FENG AI &amp; Robotics Club">
+  <meta property="og:description" content="The Perception &amp; Sensors group of the PolyU FENG AI &amp; Robotics Club: sensor calibration, localisation, mapping and detection.">
+  <meta property="og:image" content="../images/platforms/logistics-vehicle.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/club-logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="PolyU FENG AI and Robotics Club home">
+        <img src="../images/logo/club-logo-192.png" width="192" height="192" alt="">
+        <span>
+          <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
+          <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html" aria-current="page">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../news.html">News</a>
+        <a href="../team.html">Team</a>
+        <a href="../qa.html">Q&amp;A</a>
+        <a href="../donate.html">Donate</a>
+        <a class="nav-cta" href="../join.html">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner sub-banner" style="background-image: url('../images/platforms/logistics-vehicle.jpg')">
+      <div class="container">
+        <div>
+          <p class="kicker">Technical group</p>
+          <h1>Perception &amp; Sensors</h1>
+          <p>The robot's senses: cameras, LiDAR, GNSS and IMU</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../about.html">About</a> / <a href="../about.html#groups">Technical groups</a> / <span>Perception &amp; Sensors</span></nav>
+        <div class="sub-intro">
+          <div class="sub-text">
+            <p>The Perception &amp; Sensors group lets the robot know where it is and what is around it. Members choose and mount sensors, calibrate them, and write software that turns raw camera images, LiDAR scans, GNSS signals and IMU readings into positions, maps and detected objects.</p>
+            <p>Good perception is what makes autonomy possible. An autonomous Robocon robot has to find blocks and building spots; a drone near tall buildings has to keep an accurate position where satellite signals are blocked; a guide robot dog has to see kerbs and stairs.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Mentors</dt><dd>Dr. Huang Feng, Xiao Naigui</dd></div>
+            <div><dt>Student representatives</dt><dd>To be announced after the 2026 placement</dd></div>
+            <div><dt>Tools</dt><dd>ROS 2, OpenCV, LiDAR, RTK GNSS, depth cameras, IMUs</dd></div>
+            <div><dt>Works on</dt><dd>Autonomous robot localisation for Robocon, drone positioning near buildings, vehicle mapping, robot dog obstacle detection</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">What the group works on</h2>
+        </div>
+        <div class="task-grid">
+          <div><h3>Sensor selection and mounting</h3><p>Choosing cameras, LiDAR, GNSS and IMU for each robot, and mounting them rigidly.</p></div>
+          <div><h3>Calibration</h3><p>Camera intrinsics, camera-LiDAR and camera-IMU extrinsics, and time offsets between sensors.</p></div>
+          <div><h3>Localisation</h3><p>GNSS and RTK, inertial navigation and visual-inertial fusion, indoors and outdoors.</p></div>
+          <div><h3>Mapping and SLAM</h3><p>Building 2D and 3D maps and keeping the robot localised within them.</p></div>
+          <div><h3>Detection and tracking</h3><p>Finding game objects, obstacles, people, kerbs and stairs in camera and LiDAR data.</p></div>
+          <div><h3>Data and evaluation</h3><p>Time synchronisation, data logging, datasets and measuring accuracy against ground truth.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section dark formula-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Engineering foundations</h2>
+        </div>
+        <p class="section-lead">A few of the equations members use in this group. Training sessions build up to them step by step.</p>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h3>Pinhole camera projection</h3>
+            <div class="formula">\[s\begin{bmatrix}u\\ v\\ 1\end{bmatrix} = K\,[\,R \mid t\,]\begin{bmatrix}X\\ Y\\ Z\\ 1\end{bmatrix}\]</div>
+            <p>How a 3D point appears in an image. Calibration estimates the intrinsic matrix K and the pose R, t.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Kalman filter: predict</h3>
+            <div class="formula">\[\begin{aligned} \hat{x}_{k|k-1} &amp;= F\,\hat{x}_{k-1} + B\,u_k \\ P_{k|k-1} &amp;= F\,P_{k-1}F^{\top} + Q \end{aligned}\]</div>
+            <p>Propagates the robot state and its uncertainty with a motion model, for example from IMU or wheel odometry.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Kalman filter: update</h3>
+            <div class="formula">\[\begin{aligned} K_k &amp;= P_{k|k-1}H^{\top}\left(H P_{k|k-1} H^{\top} + R\right)^{-1} \\ \hat{x}_k &amp;= \hat{x}_{k|k-1} + K_k\left(z_k - H\,\hat{x}_{k|k-1}\right) \end{aligned}\]</div>
+            <p>Corrects the prediction with a measurement z such as a GNSS fix or a visual landmark.</p>
+          </div>
+          <div class="formula-card">
+            <h3>GNSS pseudorange</h3>
+            <div class="formula">\[\rho_i = \lVert \mathbf{p}_i - \mathbf{p} \rVert + c\,\delta t + \varepsilon_i\]</div>
+            <p>Distance to satellite i plus receiver clock error. Near tall buildings, reflections make ε large: a core research topic at PolyU.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Point cloud registration (ICP)</h3>
+            <div class="formula">\[\min_{R,\,t}\; \sum_i \left\lVert R\,\mathbf{p}_i + t - \mathbf{q}_i \right\rVert^2\]</div>
+            <p>Aligns a new LiDAR scan with a map or the previous scan, the basis of LiDAR odometry and mapping.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Stereo depth</h3>
+            <div class="formula">\[Z = \frac{f\,B}{d}\]</div>
+            <p>Depth from a stereo camera with focal length f, baseline B and pixel disparity d.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">What we expect from members</h2>
+        </div>
+        <p class="section-lead">Expectations grow with the member tier. Tiers are reviewed regularly, so members can move up as their skills grow.</p>
+        <div class="tier-grid">
+          <div><span class="tier-label">Tier 3 · General</span><p>Interest in sensors and programming. Learns Linux and ROS 2 basics in introductory sessions.</p></div>
+          <div><span class="tier-label">Tier 2 · Training</span><p>Programs in Python or C++, uses Linux and ROS 2, can calibrate a camera and record and replay a sensor dataset.</p></div>
+          <div><span class="tier-label">Tier 1 · Advanced</span><p>Designs the perception and localisation pipeline of a robot, evaluates its accuracy, and mentors Tier 2 members.</p></div>
+        </div>
+        <p class="prep"><strong>Before you join:</strong> Linear algebra, probability, Python or C++ and some Linux experience are good starting points. No member is expected to know everything at the start.</p>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Photos</h2>
+        </div>
+        <div class="photos">
+          <figure><a href="../images/projects/ugv-test.jpg" target="_blank" rel="noopener"><img src="../images/projects/ugv-test.jpg" alt="Obstacle-avoidance test with a small ground robot" loading="lazy"></a><figcaption>Obstacle-avoidance test with a small ground robot.</figcaption></figure>
+          <figure><a href="../images/projects/drone-inspection.jpg" target="_blank" rel="noopener"><img src="../images/projects/drone-inspection.jpg" alt="Drone positioning beside a tall building" loading="lazy"></a><figcaption>Drone positioning beside a tall building.</figcaption></figure>
+          <figure><a href="../images/projects/guide-dog.jpg" target="_blank" rel="noopener"><img src="../images/projects/guide-dog.jpg" alt="A quadruped robot with sensors on campus" loading="lazy"></a><figcaption>A quadruped robot with sensors on campus.</figcaption></figure>
+        </div>
+        <h2 class="sibling-title">Other technical groups</h2>
+        <nav class="sibling-nav" aria-label="Technical groups">
+          <a href="mechanical.html">Mechanical Design</a>
+          <a href="electronics.html">Electronics &amp; Embedded Systems</a>
+          <span aria-current="page">Perception &amp; Sensors</span>
+          <a href="software-ai.html">Software &amp; AI</a>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <p class="footer-brand"><img src="../images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../news.html">News</a>
+          <a href="../team.html">Team</a>
+          <a href="../qa.html">Q&amp;A</a>
+          <a href="../donate.html">Donate</a>
+          <a href="../join.html">Join Us</a>
+        </nav>
+      </div>
+      <div class="footer-row footer-bottom">
+        <span>&copy; 2026 PolyU FENG AI &amp; Robotics Club. All rights reserved.</span>
+        <span>Contact: <a href="mailto:airoboticsclubpolyu@gmail.com?cc=welson.wen@polyu.edu.hk">airoboticsclubpolyu@gmail.com</a> (cc <a href="mailto:welson.wen@polyu.edu.hk">welson.wen@polyu.edu.hk</a>)</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

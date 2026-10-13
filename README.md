@@ -4,13 +4,16 @@ Static website of the PolyU FENG AI & Robotics Club, published with GitHub Pages
 
 ## Pages
 
-- `index.html` - hero with the four robot platforms, key numbers, vision, project directions, latest news, competition videos, supporting parties and the visitor map.
-- `about.html` - vision, mission, international and industry exchange, leadership and supervision, technical groups, member tiers and club rules.
-- `projects.html` - cover photo, all projects (application and competition) and how projects run.
+- `index.html` - hero with the club logo and four robot platforms, key numbers, vision, project directions, latest news, competition videos, supporting parties and sponsors, links to leading robotics clubs worldwide and the visitor map.
+- `about.html` - vision, mission, international and industry exchange, leadership and supervision, technical group cards (each opens its page in `groups/`), the shared workspace, member tiers and club rules.
+- `groups/*.html` - one page per technical group: what it does, tasks, key equations, expectations by tier and photos.
+- `projects.html` - cover photo, cards for the two confirmed 2026-27 projects and the three robot platforms (each opens its page in `projects/`), the longer-term RoboCup plan and a timeline of how projects run.
+- `projects/*.html` - one page per project or platform. `robocon-2027.html` includes the 2027 game, Robocon history and PolyU's plan.
 - `news.html` - one row per news item; each row opens its own page in `news/`. The photo archive of earlier seasons is `news/archive.html`.
-- `team.html` - Director and Chief Supervisor, staff-level supervisors, PhD-level mentor team, technical groups with student representatives, and supporting parties.
+- `team.html` - Director and Chief Supervisor, staff-level supervisors, PhD-level mentor team, technical group cards with mentors and student representatives, and supporting parties and sponsors.
 - `qa.html` - questions and answers.
 - `join.html` - September recruitment, joining steps, commitment and club rules, member tiers, promotion rules and reviews.
+- `donate.html` - why to donate, what donations support, and industry partnership.
 - `events.html`, `past-seasons.html` and `competition.html` - redirects so old links keep working.
 
 Photos of former members appear only in news items.
@@ -22,6 +25,10 @@ assets/css/styles.css      shared styles
 assets/js/site.js          navigation, Q&A accordion, video embeds, visitor map
 assets/visitors/           world map data for the visitor map
 news/                      one page per news item
+groups/                    one page per technical group (equations use KaTeX from a CDN)
+projects/                  one page per project or robot platform
+images/logo/               club logo (1024 master, 512, 192, favicon, social image) and earlier design options
+images/clubs/              screenshots of leading robotics club websites
 images/platforms/          home page platform tiles
 images/projects/           project cover and cards
 images/groups/             technical group illustrations
@@ -36,10 +43,13 @@ images/partners/           supporting-party logos and white banner logos
 
 - **News item:** copy a page in `news/`, change the text and photos, and update the "Newer"/"Older" links of its neighbours. Add a matching `<li>` row at the top of the `news-rows` list in `news.html`, and replace the oldest row in the home page "Latest News" list.
 - **Person:** add a 320 x 320 JPG to `images/people/` and copy an existing `<article class="person">` card in `team.html`. Mentors carry a group tag naming their technical group.
-- **Student representatives:** list them in the matching group card under "Technical Groups and Student Representatives" in `team.html`.
+- **Student representatives:** update the matching card under "Technical Groups and Student Representatives" in `team.html` and the "Student representatives" row on the group's page in `groups/`.
 - **Video:** copy a `<figure class="video">` block in `index.html` and change `data-youtube` to the YouTube video ID. The video loads only when clicked.
+- **Robotics club link:** add a 640 x 360 screenshot to `images/clubs/` and copy a `<li>` in the `club-cards` list in `index.html`.
+- **Technical group text:** the short card text is in `about.html` and `team.html`; the full description is on the group's page in `groups/`.
+- **Page banner photo:** set `style="background-image: url('...')"` on the `page-banner` section, with the path relative to the page.
 - **Supporting party:** add a white-background logo to `images/partners/` and an `<li>` to the `logos` lists in `index.html` and `team.html`.
-- **Navigation or footer:** the header and footer are repeated in every page, including `news/`; update all pages together.
+- **Navigation or footer:** the header and footer are repeated in every page, including `news/`, `groups/` and `projects/`; update all pages together.
 
 ## Contact
 

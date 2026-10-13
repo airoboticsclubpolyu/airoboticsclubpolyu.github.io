@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#a02337">
   <title>Projects | PolyU FENG AI &amp; Robotics Club</title>
-  <meta name="description" content="Student robotics projects at PolyU: façade-cleaning drones, a robotic guide dog, an autonomous ground vehicle, Robocon 2027 and RoboCup 2028.">
+  <meta name="description" content="Student robotics projects at PolyU: Robocon 2027, a robot dog designed and built by students, and drone, robot dog and unmanned vehicle platforms for inspection, patrol, delivery and assistance.">
   <meta property="og:title" content="Projects | PolyU FENG AI &amp; Robotics Club">
-  <meta property="og:description" content="Student robotics projects at PolyU: façade-cleaning drones, a robotic guide dog, an autonomous ground vehicle, Robocon 2027 and RoboCup 2028.">
+  <meta property="og:description" content="Student robotics projects at PolyU: Robocon 2027, a robot dog designed and built by students, and drone, robot dog and unmanned vehicle platforms for inspection, patrol, delivery and assistance.">
   <meta property="og:image" content="images/projects/cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="images/robotic_logo.svg" type="image/svg+xml">
+  <link rel="icon" href="images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo/club-logo-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="PolyU FENG AI and Robotics Club home">
-        <img src="images/robotic_logo.svg" width="1600" height="1131" alt="">
+        <img src="images/logo/club-logo-192.png" width="192" height="192" alt="">
         <span>
           <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
           <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
@@ -35,6 +36,7 @@
         <a href="news.html">News</a>
         <a href="team.html">Team</a>
         <a href="qa.html">Q&amp;A</a>
+        <a href="donate.html">Donate</a>
         <a class="nav-cta" href="join.html">Join Us</a>
       </nav>
     </div>
@@ -45,63 +47,93 @@
       <div class="container">
         <p class="kicker">PolyU FENG AI &amp; Robotics Club</p>
         <h1>Projects</h1>
-        <p>Drones, robot dogs, unmanned vehicles and competition robots, built by students with staff supervisors and PhD-level mentors.</p>
+        <p>Robocon 2027, a robot dog designed and built by students, and drone, robot dog and unmanned vehicle platforms for real-world applications.</p>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="confirmed">
       <div class="container">
         <div class="section-head">
-          <h2 class="section-title">Our Projects</h2>
+          <h2 class="section-title">Confirmed Projects for 2026–27</h2>
         </div>
-        <p class="section-lead">All club work is organised as projects. Application projects solve a real-world problem; competition projects build robots for an external contest. Both follow the same rules below.</p>
-        <div class="project-grid">
-          <article class="project" id="facade-drone">
-            <img src="images/projects/facade-drone.jpg" width="1000" height="667" alt="Drones for building inspection and façade cleaning" loading="lazy">
-            <div class="project-body">
-              <span class="tag">Drone project · 2026–27</span>
-              <h3>Drones for building inspection and façade cleaning</h3>
-              <p>An autonomous UAV that flies close to building façades to inspect them and clean windows, a real need for Hong Kong's high-rise city. Students work on positioning near glass and concrete, contact control and safe flight procedures.</p>
-              <p class="skills">Flight control · GNSS/visual positioning · aerial manipulation · safety</p>
-            </div>
-          </article>
-          <article class="project" id="guide-dog">
-            <img src="images/projects/guide-dog.jpg" width="1000" height="750" alt="Robotic guide dog" loading="lazy">
-            <div class="project-body">
-              <span class="tag">Robot dog project · 2026–27</span>
-              <h3>Robotic guide dog</h3>
-              <p>A quadruped robot that can guide visually impaired people along pavements and indoor routes: detecting obstacles, kerbs and stairs, following a planned path and giving clear feedback to the user.</p>
-              <p class="skills">Legged locomotion · perception · path planning · human–robot interaction</p>
-            </div>
-          </article>
-          <article class="project" id="ground-vehicle">
-            <img src="images/projects/ground-vehicle.jpg" width="720" height="665" alt="Autonomous ground vehicle" loading="lazy">
-            <div class="project-body">
-              <span class="tag">Unmanned vehicle project · 2026–27</span>
-              <h3>Autonomous ground vehicle</h3>
-              <p>A small unmanned vehicle for campus delivery and patrol. Students build the full autonomy stack, from LiDAR and camera perception and mapping to localisation, planning and vehicle control.</p>
-              <p class="skills">ROS · SLAM · LiDAR and camera fusion · motion planning</p>
-            </div>
-          </article>
-          <article class="project" id="robocon-2027">
-            <img src="images/projects/robocon.jpg" width="1000" height="563" alt="Robocon 2027" loading="lazy">
-            <div class="project-body">
-              <span class="tag">Competition project · 2026–27</span>
+        <p class="section-lead">One competition and one full design-and-build project. Teams are formed by Tier 1 and Tier 2 members and draw on all four technical groups.</p>
+        <div class="project-cards" style="--cols: 2">
+          <a class="project-card" id="robocon-2027" href="projects/robocon-2027.html">
+            <img src="images/projects/robocon-arena.jpg" width="1400" height="1050" alt="The Robocon Hong Kong contest arena" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Competition · confirmed</span>
               <h3>Robocon 2027</h3>
-              <p>The club's main competition project for 2026–27. The team will enter the Robocon Hong Kong contest, the route to ABU Robocon 2027 in Solo, Indonesia, on the theme “The Pursuit of Mustika Nusantara”. Two robots must handle game objects, build towers and work together under match time.</p>
-              <p class="skills">Mechanisms · embedded control · autonomous navigation · vision · match strategy</p>
+              <p>The Hong Kong contest and the route to ABU Robocon 2027 in Solo, Indonesia. Two robots, one fully autonomous, rebuild towers and race to place the Mustika.</p>
+              <span class="more">The game, Robocon history and our plan</span>
             </div>
-          </article>
-          <article class="project" id="robocup-2028">
-            <img src="images/projects/robocup.jpg" width="1000" height="750" alt="RoboCup China Open 2028" loading="lazy">
-            <div class="project-body">
-              <span class="tag">Competition project · for 2028</span>
-              <h3>RoboCup China Open 2028</h3>
-              <p>A long-term project preparing for the RoboCup China Open in 2028, starting with robot platform selection, skills training and small internal matches in 2026–27.</p>
-              <p class="skills">Multi-robot coordination · vision · locomotion · AI decision-making</p>
+          </a>
+          <a class="project-card" id="robot-dog-build" href="projects/robot-dog-build.html">
+            <img src="images/projects/dog-stairs.jpg" width="900" height="900" alt="A quadruped robot climbing stairs" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Design-and-build project · confirmed</span>
+              <h3>Design and build our own robot dog</h3>
+              <p>A quadruped robot designed from a blank sheet, then built, assembled and tested by members, and documented for the next cohort.</p>
+              <span class="more">Subsystems, engineering and phases</span>
             </div>
-          </article>
+          </a>
         </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="platforms">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Robot Platforms and Their Applications</h2>
+        </div>
+        <p class="section-lead">A drone, a robot dog or an unmanned vehicle is a platform, not a single project. Once it moves reliably, it can carry different sensors and tools for different jobs. Members choose an application, write a proposal and develop it on the shared platform.</p>
+        <div class="project-cards">
+          <a class="project-card" id="drones" href="projects/drones.html">
+            <img src="images/platforms/drone.jpg" width="800" height="600" alt="A delivery drone carrying a parcel" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Platform</span>
+              <h3>Drones</h3>
+              <p>Building inspection, infrastructure patrol, campus monitoring and delivery in a high-rise city.</p>
+              <span class="more">Applications and engineering</span>
+            </div>
+          </a>
+          <a class="project-card" id="robot-dogs" href="projects/robot-dogs.html">
+            <img src="images/projects/guide-dog.jpg" width="1000" height="750" alt="A quadruped robot on campus" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Platform</span>
+              <h3>Robot dogs</h3>
+              <p>Guide dog for visually impaired people, delivery up and down stairs, inspection and search and rescue.</p>
+              <span class="more">Applications and engineering</span>
+            </div>
+          </a>
+          <a class="project-card" id="ground-vehicles" href="projects/ground-vehicles.html">
+            <img src="images/projects/ugv-logistics.jpg" width="900" height="600" alt="An autonomous logistics van on campus" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Platform</span>
+              <h3>Unmanned ground vehicles</h3>
+              <p>Campus delivery, patrol, mapping and logistics problems from industry partners.</p>
+              <span class="more">Applications and engineering</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="robocup-2028">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Longer-Term Plan</h2>
+        </div>
+        <article class="feature compact">
+          <div class="feature-media">
+            <img src="images/projects/robocup.jpg" width="1000" height="750" alt="RoboCup robots on display" loading="lazy">
+          </div>
+          <div class="feature-body">
+            <span class="tag">Competition · planned for 2028</span>
+            <h3>RoboCup China Open 2028</h3>
+            <p>A long-term project preparing for the RoboCup China Open in 2028. In 2026–27 it starts with robot platform selection, skills training and small internal matches, building on the robot dog and ground vehicle platforms.</p>
+            <p class="skills">Multi-robot coordination · vision · locomotion · AI decision-making</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -110,23 +142,23 @@
         <div class="section-head">
           <h2 class="section-title">How Projects Run</h2>
         </div>
-        <p class="section-lead">Every project, including competition projects, goes through the same six stages.</p>
-        <ol class="process six">
-          <li><strong>Team formation</strong><span>Tier 1 members form and lead a team. Tier 2 members join under supervision, drawn from different technical groups.</span></li>
-          <li><strong>Proposal &amp; defence</strong><span>A written proposal with an itemised budget and measurable targets, presented to a review panel with questions.</span></li>
-          <li><strong>Approval</strong><span>No project is funded automatically. The panel may approve, ask for revisions, reduce the budget or reject.</span></li>
-          <li><strong>Build &amp; test</strong><span>Bi-weekly progress with mentors, design reviews before major purchases and fabrication support from Industrial Centre engineers.</span></li>
-          <li><strong>Mid-term review</strong><span>A progress and maintenance report plus a presentation. The result is pass, conditional pass or fail.</span></li>
-          <li><strong>Delivery &amp; handover</strong><span>Final demonstration or competition, complete documentation and a trained successor for the next cohort.</span></li>
+        <p class="section-lead">Every project, including competition projects, follows the same six stages. Funding is released in three parts as the project passes each review.</p>
+        <ol class="timeline">
+          <li><strong>Team formation</strong><span>Tier 1 and Tier 2 members from different technical groups form a team.</span></li>
+          <li><strong>Proposal and defence</strong><span>Written proposal with budget and targets, presented to a review panel.</span><em class="badge">Panel review</em></li>
+          <li><strong>Approval</strong><span>Approve, revise, reduce the budget or reject.</span><em class="badge money">40% funding</em></li>
+          <li><strong>Build and test</strong><span>Bi-weekly progress with mentors and design reviews before big purchases.</span></li>
+          <li><strong>Mid-term review</strong><span>Report and presentation: pass, conditional pass or fail.</span><em class="badge money">40% funding</em></li>
+          <li><strong>Delivery and handover</strong><span>Final demo or competition, documentation and a trained successor.</span><em class="badge money">20% funding</em></li>
         </ol>
-        <dl class="rows">
-          <div><dt>What a proposal must answer</dt><dd>Why PolyU should support the project; what will be built and how; why this team can deliver; the target result, such as a specific competition award, and how success will be measured; why each budget item is needed; and the milestones, risks and safety controls.</dd></div>
-          <div><dt>Funding and purchasing</dt><dd>Every purchase needs a quotation and approval before buying. Teams first check club and University inventory and reuse existing equipment wherever possible, and keep the original receipt, purchase link and payment record for every item. Project funding is released in stages, typically 40% after approval, 40% after a passed mid-term review and 20% after the final demonstration and documentation.</dd></div>
-          <div><dt>Competition entries</dt><dd>Only Tier 1 members can form a team to enter a competition. When more than one team wants to represent PolyU, an internal competition decides who goes.</dd></div>
-          <div><dt>Accountability</dt><dd>Each team states its target result in the proposal. A team that misses its target without a convincing external reason will normally not be funded in the next cycle, and its Tier 1 members are reviewed. A failed mid-term review stops the project; the team returns club assets and hands over its documentation.</dd></div>
-          <div><dt>Workspace</dt><dd>Industrial Centre workspace is allocated to project teams by application for a set period. Use is checked; space used less than about 60% of the time goes back to the Industrial Centre.</dd></div>
-          <div><dt>Documentation</dt><dd>Every project keeps a repository with requirements, CAD, code, bill of materials, test logs and lessons learned. A project is closed only after a complete handover.</dd></div>
-        </dl>
+        <div class="task-grid">
+          <div><h3>What a proposal must answer</h3><p>Why PolyU should support it, what will be built and how, why this team can deliver, the target result and how it is measured, the budget, milestones, risks and safety controls.</p></div>
+          <div><h3>Funding and purchasing</h3><p>Every purchase needs a quotation and approval first. Check club and University inventory before buying, and keep every receipt and purchase record.</p></div>
+          <div><h3>Competition entries</h3><p>Only Tier 1 and Tier 2 members can enter a competition or run a funded project. If several teams want to represent PolyU, an internal competition decides.</p></div>
+          <div><h3>Accountability</h3><p>A team that misses its target without a convincing reason is normally not funded in the next cycle, and its members' tiers are reviewed. A failed mid-term review stops the project.</p></div>
+          <div><h3>Workspace</h3><p>Industrial Centre space is shared and allocated by application for a set period. Space used less than about 60% of the time goes back to the Industrial Centre.</p></div>
+          <div><h3>Documentation</h3><p>Every project keeps a repository with requirements, CAD, code, bill of materials, test logs and lessons learned. A project closes only after a complete handover.</p></div>
+        </div>
       </div>
     </section>
   </main>
@@ -134,13 +166,14 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-row">
-        <p class="footer-brand"><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <p class="footer-brand"><img src="images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="about.html">About</a>
           <a href="projects.html">Projects</a>
           <a href="news.html">News</a>
           <a href="team.html">Team</a>
           <a href="qa.html">Q&amp;A</a>
+          <a href="donate.html">Donate</a>
           <a href="join.html">Join Us</a>
         </nav>
       </div>

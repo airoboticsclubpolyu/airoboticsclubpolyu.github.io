@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a02337">
+  <title>Design and build our own robot dog | PolyU FENG AI &amp; Robotics Club</title>
+  <meta name="description" content="The robot dog design-and-build project at the PolyU FENG AI &amp; Robotics Club: subsystems, engineering foundations and project phases.">
+  <meta property="og:title" content="Design and build our own robot dog | PolyU FENG AI &amp; Robotics Club">
+  <meta property="og:description" content="The robot dog design-and-build project at the PolyU FENG AI &amp; Robotics Club: subsystems, engineering foundations and project phases.">
+  <meta property="og:image" content="../images/projects/dog-stairs.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/club-logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="PolyU FENG AI and Robotics Club home">
+        <img src="../images/logo/club-logo-192.png" width="192" height="192" alt="">
+        <span>
+          <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
+          <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../news.html">News</a>
+        <a href="../team.html">Team</a>
+        <a href="../qa.html">Q&amp;A</a>
+        <a href="../donate.html">Donate</a>
+        <a class="nav-cta" href="../join.html">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner sub-banner" style="background-image: url('../images/projects/dog-stairs.jpg')">
+      <div class="container">
+        <div>
+          <p class="kicker">Design-and-build project · confirmed</p>
+          <h1>Design and build our own robot dog</h1>
+          <p>A quadruped robot designed, built and tested by club members</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / <span>Robot dog build</span></nav>
+        <div class="sub-intro">
+          <div class="sub-text">
+            <p>Members will design a <strong>quadruped robot from a blank sheet</strong>, then build, assemble and test it themselves. Instead of buying a finished robot, the team works through every decision: leg geometry, actuators, the frame, batteries and wiring, motor control and the walking controller.</p>
+            <p>Building our own robot means members understand every part of it, can repair it themselves, and leave a documented platform that the next cohort can improve and use for guide-dog, delivery or inspection work.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Type</dt><dd>Design-and-build project</dd></div>
+            <div><dt>Status</dt><dd>Confirmed for 2026–27</dd></div>
+            <div><dt>Groups</dt><dd>All four technical groups</dd></div>
+            <div><dt>Goal</dt><dd>A robot dog that stands, walks and turns reliably, with full documentation</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">The robot, subsystem by subsystem</h2>
+        </div>
+        <p class="section-lead">Each technical group owns one part of the robot; design reviews bring them together.</p>
+        <div class="task-grid two">
+          <div><h3>Legs and frame</h3><p><em>Mechanical Design.</em> Typically three joints per leg (hip abduction, hip and knee), a light and stiff body, and protected joints for falls.</p></div>
+          <div><h3>Actuators and power</h3><p><em>Electronics.</em> Motors with low-ratio gearboxes and encoders, motor drivers on a CAN bus, the battery and an emergency stop.</p></div>
+          <div><h3>State estimation</h3><p><em>Perception.</em> IMU and joint encoders to estimate body orientation and speed; a depth camera later for stairs and obstacles.</p></div>
+          <div><h3>Walking control</h3><p><em>Software &amp; AI.</em> A model-based gait controller first, then reinforcement-learning policies trained in simulation.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section dark formula-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Engineering foundations</h2>
+        </div>
+        <p class="section-lead">The equations behind a walking robot.</p>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h3>Leg inverse kinematics</h3>
+            <div class="formula">\[\theta_2 = \arccos\!\left(\frac{x^2 + y^2 - l_1^2 - l_2^2}{2\,l_1 l_2}\right)\]</div>
+            <p>Knee angle needed to put the foot at (x, y) for thigh length l₁ and shank length l₂.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Joint torques from foot force</h3>
+            <div class="formula">\[\boldsymbol{\tau} = J(\boldsymbol{\theta})^{\top}\,\mathbf{F}\]</div>
+            <p>The leg Jacobian maps the ground force at the foot to the torque each motor must give: the basis for actuator sizing.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Static stability</h3>
+            <div class="formula">\[\mathbf{p}^{xy}_{\text{CoM}} \in \operatorname{conv}\{\mathbf{p}^{xy}_{\text{foot},i}\}\]</div>
+            <p>When walking slowly, the centre of mass must stay inside the polygon formed by the feet on the ground.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Gait duty factor</h3>
+            <div class="formula">\[\beta = \frac{T_{\text{stance}}}{T_{\text{cycle}}}\]</div>
+            <p>The fraction of each step a foot is on the ground. Walking uses β > 0.5; trotting and running use less.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Project phases</h2>
+        </div>
+        <ol class="phases">
+          <li><strong>Requirements</strong>Size, payload, speed and budget targets</li>
+          <li><strong>Design and simulation</strong>CAD, leg kinematics, gait tests in simulation</li>
+          <li><strong>Build</strong>Machining, 3D printing, PCBs and wiring</li>
+          <li><strong>Assembly and bring-up</strong>Joint calibration, motor control, safety stop</li>
+          <li><strong>Walking tests</strong>Standing, walking, turning, then a public demo</li>
+        </ol>
+        <div class="photos">
+          <figure><a href="../images/projects/dog-stairs.jpg" target="_blank" rel="noopener"><img src="../images/projects/dog-stairs.jpg" alt="Target: a robot dog that can climb stairs" loading="lazy"></a><figcaption>Target: a robot dog that can climb stairs.</figcaption></figure>
+          <figure><a href="../images/projects/dog-terrain.jpg" target="_blank" rel="noopener"><img src="../images/projects/dog-terrain.jpg" alt="Gait training on rough terrain in simulation" loading="lazy"></a><figcaption>Gait training on rough terrain in simulation.</figcaption></figure>
+          <figure><a href="../images/past-seasons/2025-2026/robot-platform-build.jpg" target="_blank" rel="noopener"><img src="../images/past-seasons/2025-2026/robot-platform-build.jpg" alt="Building and testing a robot platform" loading="lazy"></a><figcaption>Building and testing a robot platform.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="section sibling">
+      <div class="container">
+        <h2 class="sibling-title">Other projects</h2>
+        <nav class="sibling-nav" aria-label="Projects">
+          <a href="robocon-2027.html">Robocon 2027</a>
+          <span aria-current="page">Robot dog build</span>
+          <a href="drones.html">Drones</a>
+          <a href="robot-dogs.html">Robot dogs</a>
+          <a href="ground-vehicles.html">Unmanned ground vehicles</a>
+        </nav>
+        <p class="back-link"><a href="../projects.html">&larr; All projects</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <p class="footer-brand"><img src="../images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../news.html">News</a>
+          <a href="../team.html">Team</a>
+          <a href="../qa.html">Q&amp;A</a>
+          <a href="../donate.html">Donate</a>
+          <a href="../join.html">Join Us</a>
+        </nav>
+      </div>
+      <div class="footer-row footer-bottom">
+        <span>&copy; 2026 PolyU FENG AI &amp; Robotics Club. All rights reserved.</span>
+        <span>Contact: <a href="mailto:airoboticsclubpolyu@gmail.com?cc=welson.wen@polyu.edu.hk">airoboticsclubpolyu@gmail.com</a> (cc <a href="mailto:welson.wen@polyu.edu.hk">welson.wen@polyu.edu.hk</a>)</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

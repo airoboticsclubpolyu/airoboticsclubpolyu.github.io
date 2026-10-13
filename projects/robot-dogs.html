@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a02337">
+  <title>Robot dogs | PolyU FENG AI &amp; Robotics Club</title>
+  <meta name="description" content="Robot dog projects at the PolyU FENG AI &amp; Robotics Club: guide dog, delivery, inspection and search and rescue.">
+  <meta property="og:title" content="Robot dogs | PolyU FENG AI &amp; Robotics Club">
+  <meta property="og:description" content="Robot dog projects at the PolyU FENG AI &amp; Robotics Club: guide dog, delivery, inspection and search and rescue.">
+  <meta property="og:image" content="../images/projects/guide-dog.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/club-logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="PolyU FENG AI and Robotics Club home">
+        <img src="../images/logo/club-logo-192.png" width="192" height="192" alt="">
+        <span>
+          <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
+          <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../news.html">News</a>
+        <a href="../team.html">Team</a>
+        <a href="../qa.html">Q&amp;A</a>
+        <a href="../donate.html">Donate</a>
+        <a class="nav-cta" href="../join.html">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner sub-banner" style="background-image: url('../images/projects/guide-dog.jpg')">
+      <div class="container">
+        <div>
+          <p class="kicker">Robot platform</p>
+          <h1>Robot dogs</h1>
+          <p>One legged platform for guiding, delivery and inspection</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../projects.html">Projects</a> / <span>Robot dogs</span></nav>
+        <div class="sub-intro">
+          <div class="sub-text">
+            <p>Legged robots can climb stairs, step over kerbs and walk where wheels cannot. With different sensors and software, the same quadruped can guide a person, carry a load or inspect a plant room.</p>
+            <p>Teams use the club's quadruped platforms, and later the robot dog the club builds itself, to develop one application at a time, from a first demonstration on campus to a reliable system.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Type</dt><dd>Robot platform</dd></div>
+            <div><dt>Applications</dt><dd>Guide dog, delivery, inspection, search and rescue</dd></div>
+            <div><dt>Key skills</dt><dd>Legged locomotion, perception, path planning, human–robot interaction</dd></div>
+            <div><dt>Who can lead</dt><dd>Tier 1 and Tier 2 members, by proposal</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Applications</h2>
+        </div>
+        <p class="section-lead">Each application is a possible project.</p>
+        <div class="task-grid two">
+          <div><h3>Guide dog</h3><p>Guiding visually impaired people along pavements and indoor routes, detecting obstacles, kerbs and stairs, and giving clear feedback through a handle.</p></div>
+          <div><h3>Delivery</h3><p>Carrying parcels and supplies for the last hundred metres, including up and down stairs that wheeled robots cannot use.</p></div>
+          <div><h3>Inspection and patrol</h3><p>Routine checks in plant rooms, tunnels and substations: reading gauges, listening for faults and reporting changes.</p></div>
+          <div><h3>Search and rescue</h3><p>Moving through rubble and rough ground, as in the RoboCup Rescue league.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section dark formula-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Engineering foundations</h2>
+        </div>
+        <p class="section-lead">Two ideas every legged-robot team needs.</p>
+        <div class="formula-grid">
+          <div class="formula-card">
+            <h3>Static stability</h3>
+            <div class="formula">\[\mathbf{p}^{xy}_{\text{CoM}} \in \operatorname{conv}\{\mathbf{p}^{xy}_{\text{foot},i}\}\]</div>
+            <p>At low speed, the centre of mass must stay inside the polygon formed by the feet on the ground.</p>
+          </div>
+          <div class="formula-card">
+            <h3>Joint torques from foot force</h3>
+            <div class="formula">\[\boldsymbol{\tau} = J(\boldsymbol{\theta})^{\top}\,\mathbf{F}\]</div>
+            <p>Used to control how hard each foot pushes, for carrying a load or walking on stairs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Photos</h2>
+        </div>
+        <div class="photos">
+          <figure><a href="../images/platforms/robot-dog.jpg" target="_blank" rel="noopener"><img src="../images/platforms/robot-dog.jpg" alt="A quadruped robot walking on the PolyU lawn" loading="lazy"></a><figcaption>A quadruped robot walking on the PolyU lawn.</figcaption></figure>
+          <figure><a href="../images/projects/guide-dog.jpg" target="_blank" rel="noopener"><img src="../images/projects/guide-dog.jpg" alt="A quadruped robot on campus" loading="lazy"></a><figcaption>A quadruped robot on campus.</figcaption></figure>
+          <figure><a href="../images/projects/dog-terrain.jpg" target="_blank" rel="noopener"><img src="../images/projects/dog-terrain.jpg" alt="Rough-terrain training in simulation" loading="lazy"></a><figcaption>Rough-terrain training in simulation.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="section sibling">
+      <div class="container">
+        <h2 class="sibling-title">Other projects</h2>
+        <nav class="sibling-nav" aria-label="Projects">
+          <a href="robocon-2027.html">Robocon 2027</a>
+          <a href="robot-dog-build.html">Robot dog build</a>
+          <a href="drones.html">Drones</a>
+          <span aria-current="page">Robot dogs</span>
+          <a href="ground-vehicles.html">Unmanned ground vehicles</a>
+        </nav>
+        <p class="back-link"><a href="../projects.html">&larr; All projects</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <p class="footer-brand"><img src="../images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../news.html">News</a>
+          <a href="../team.html">Team</a>
+          <a href="../qa.html">Q&amp;A</a>
+          <a href="../donate.html">Donate</a>
+          <a href="../join.html">Join Us</a>
+        </nav>
+      </div>
+      <div class="footer-row footer-bottom">
+        <span>&copy; 2026 PolyU FENG AI &amp; Robotics Club. All rights reserved.</span>
+        <span>Contact: <a href="mailto:airoboticsclubpolyu@gmail.com?cc=welson.wen@polyu.edu.hk">airoboticsclubpolyu@gmail.com</a> (cc <a href="mailto:welson.wen@polyu.edu.hk">welson.wen@polyu.edu.hk</a>)</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>
