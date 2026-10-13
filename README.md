@@ -10,7 +10,8 @@ Static website of the PolyU FENG AI & Robotics Club, published with GitHub Pages
 - `projects.html` - cover photo, cards for the two confirmed 2026-27 projects and the three robot platforms (each opens its page in `projects/`), the longer-term RoboCup plan and a timeline of how projects run.
 - `projects/*.html` - one page per project or platform. `robocon-2027.html` includes the 2027 game, Robocon history and PolyU's plan.
 - `news.html` - one row per news item; each row opens its own page in `news/`. The photo archive of earlier seasons is `news/archive.html`.
-- `team.html` - Director and Chief Supervisor, staff-level supervisors, PhD-level mentor team, technical group cards with mentors and student representatives, and supporting parties and sponsors.
+- `resources.html` - one row per learning guide or document; each row opens its own page in `resources/`. The first guide is `resources/learning-roadmap.html` (what members should learn, with equations, code and free courses).
+- `team.html` - Club Director, staff-level supervisors (Chief Supervisor first), PhD-level mentor team, technical group cards with mentors and student representatives, and supporting parties and sponsors.
 - `qa.html` - questions and answers.
 - `join.html` - September recruitment, joining steps, commitment and club rules, member tiers, promotion rules and reviews.
 - `donate.html` - why to donate, what donations support, and industry partnership.
@@ -27,12 +28,14 @@ assets/visitors/           world map data for the visitor map
 news/                      one page per news item
 groups/                    one page per technical group (equations use KaTeX from a CDN)
 projects/                  one page per project or robot platform
+resources/                 one page per guide (KaTeX equations, highlight.js code blocks from CDNs)
 images/logo/               club logo (1024 master, 512, 192, favicon, social image) and earlier design options
 images/clubs/              screenshots of leading robotics club websites
 images/platforms/          home page platform tiles
 images/projects/           project cover and cards
 images/groups/             technical group illustrations
 images/news/               photos for news items
+images/resources/          figures for resource guides, one folder per guide
 images/past-seasons/       2025-26 season photos (news items)
 images/club/               earlier-season photos (photo archive)
 images/people/             320 x 320 portraits for the team page
@@ -42,6 +45,7 @@ images/partners/           supporting-party logos and white banner logos
 ## Common edits
 
 - **News item:** copy a page in `news/`, change the text and photos, and update the "Newer"/"Older" links of its neighbours. Add a matching `<li>` row at the top of the `news-rows` list in `news.html`, and replace the oldest row in the home page "Latest News" list.
+- **Resource:** copy `resources/learning-roadmap.html`, change the text, and add a matching `<li>` row to the `news-rows` list in `resources.html`. Put figures in `images/resources/<guide-name>/`.
 - **Person:** add a 320 x 320 JPG to `images/people/` and copy an existing `<article class="person">` card in `team.html`. Mentors carry a group tag naming their technical group.
 - **Student representatives:** update the matching card under "Technical Groups and Student Representatives" in `team.html` and the "Student representatives" row on the group's page in `groups/`.
 - **Video:** copy a `<figure class="video">` block in `index.html` and change `data-youtube` to the YouTube video ID. The video loads only when clicked.
@@ -49,7 +53,7 @@ images/partners/           supporting-party logos and white banner logos
 - **Technical group text:** the short card text is in `about.html` and `team.html`; the full description is on the group's page in `groups/`.
 - **Page banner photo:** set `style="background-image: url('...')"` on the `page-banner` section, with the path relative to the page.
 - **Supporting party:** add a white-background logo to `images/partners/` and an `<li>` to the `logos` lists in `index.html` and `team.html`.
-- **Navigation or footer:** the header and footer are repeated in every page, including `news/`, `groups/` and `projects/`; update all pages together.
+- **Navigation or footer:** the header and footer are repeated in every page, including `news/`, `groups/`, `projects/` and `resources/`; update all pages together.
 
 ## Contact
 

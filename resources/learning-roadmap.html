@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a02337">
+  <title>Learning roadmap for club members | PolyU FENG AI &amp; Robotics Club</title>
+  <meta name="description" content="What a robotics club member needs to learn, in order: Linux, Git and Python; the maths behind robots; AI and loss functions; control; ROS 2; and a track for each technical group. With equations, code examples and free courses.">
+  <meta property="og:title" content="Learning roadmap for club members | PolyU FENG AI &amp; Robotics Club">
+  <meta property="og:description" content="What a robotics club member needs to learn, in order: Linux, Git and Python; the maths behind robots; AI and loss functions; control; ROS 2; and a track for each technical group. With equations, code examples and free courses.">
+  <meta property="og:image" content="../images/resources/learning-roadmap/gradient-descent.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo/club-logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" crossorigin="anonymous">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" onload="hljs.highlightAll();"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="PolyU FENG AI and Robotics Club home">
+        <img src="../images/logo/club-logo-192.png" width="192" height="192" alt="">
+        <span>
+          <span class="brand-title">PolyU FENG AI &amp; Robotics Club</span>
+          <span class="brand-subtitle">Supported by the Faculty of Engineering · The Hong Kong Polytechnic University</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../news.html">News</a>
+        <a href="../resources.html" aria-current="page">Resources</a>
+        <a href="../team.html">Team</a>
+        <a href="../qa.html">Q&amp;A</a>
+        <a href="../donate.html">Donate</a>
+        <a class="nav-cta" href="../join.html">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner" style="background-image: url('../images/past-seasons/2025-2026/team-coding-lab.jpg')">
+      <div class="container">
+        <div>
+          <p class="kicker">PolyU FENG AI &amp; Robotics Club</p>
+          <h1>Resources</h1>
+          <p>Learning guides, documents and materials for members</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <article class="article">
+          <p class="back"><a href="../resources.html">&larr; All resources</a></p>
+          <div class="article-meta"><time>October 2026</time><span class="tag">Guide</span></div>
+          <h1>Learning roadmap for club members</h1>
+<p>A robot only works when mechanics, electronics, sensing and software work together, so every member needs a common foundation before going deep into one area. Nobody learns everything at once. This guide lists what to learn, in a sensible order, with free courses and short examples you can run yourself.</p>
+<p>Plan on about four to six hours a week. Learn by building: after each topic, write a small program or make a small part, and keep your notes and code in a Git repository that you can show to your mentor.</p>
+<h2>The roadmap at a glance</h2>
+<div class="tier-grid">
+  <div><span class="tier-label">Stage 1 · Foundations</span><p>Linux command line, Git and Python; linear algebra, calculus and probability. For every member, in the first one to two months.</p></div>
+  <div><span class="tier-label">Stage 2 · Core robotics</span><p>How AI models learn, feedback control, ROS 2 and simulation, plus the basics of CAD and electronics.</p></div>
+  <div><span class="tier-label">Stage 3 · Specialise</span><p>The track of your technical group, applied in a real project with a mentor.</p></div>
+</div>
+<h2>Stage 1: tools every member uses</h2>
+<p>Almost all robot software runs on Linux, is shared through Git and is first written in Python. Learn these early; they make every later topic easier. C++ follows once you are comfortable, because most real-time robot code is written in it.</p>
+<ul class="link-list">
+  <li><a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener">The Missing Semester of Your CS Education (MIT)</a><span>Shell, editors, Git, debugging and automation in short lectures.</span></li>
+  <li><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a><span>The free book on Git; read chapters 1 to 3 first.</span></li>
+  <li><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">The Python Tutorial</a><span>The official introduction to Python.</span></li>
+  <li><a href="https://www.learncpp.com/" target="_blank" rel="noopener">Learn C++</a><span>A complete, free C++ course for when you are ready.</span></li>
+</ul>
+<h2>Stage 1: the maths behind robots</h2>
+<p>Linear algebra describes where things are and how they move. A robot's pose in the plane is a rotation and a translation, and both can be written as one matrix. Chaining these matrices gives the position of a gripper, a camera or a foot.</p>
+<div class="eq">\[R(\theta) = \begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}, \qquad T = \begin{bmatrix} R &amp; \mathbf{t} \\ \mathbf{0}^{\top} &amp; 1 \end{bmatrix}\]</div>
+<div class="eq">\[\mathbf{p}_{\text{world}} = T\,\mathbf{p}_{\text{robot}}\]</div>
+<p>Calculus gives velocities and gradients, and probability lets a robot reason about noisy sensors. You do not need all of it before starting, but you will meet all three in every group.</p>
+<ul class="link-list">
+  <li><a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener">MIT 18.06SC Linear Algebra</a><span>Gilbert Strang's classic course, with lecture videos and problem sets.</span></li>
+  <li><a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener">Essence of Linear Algebra (3Blue1Brown)</a><span>Short visual videos that build intuition.</span></li>
+  <li><a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">Convex Optimization (Boyd and Vandenberghe)</a><span>Free book; useful later for estimation, planning and learning.</span></li>
+</ul>
+<h2>Stage 2: how an AI model learns</h2>
+<p>A neural network is a function with many adjustable weights \(\mathbf{w}\). Training means choosing the weights that make a <strong>loss function</strong> small. The loss measures how wrong the model is on the training data. For predicting a number, such as a distance, the usual loss is the mean squared error; for choosing a class, such as which object is in an image, it is the cross-entropy:</p>
+<div class="eq">\[L_{\text{MSE}}(\mathbf{w}) = \frac{1}{N}\sum_{i=1}^{N} \big(y_i - f_{\mathbf{w}}(\mathbf{x}_i)\big)^2\]</div>
+<div class="eq">\[L_{\text{CE}}(\mathbf{w}) = -\frac{1}{N}\sum_{i=1}^{N}\sum_{c} y_{i,c}\,\log \hat{p}_{i,c}\]</div>
+<p>Here \(y_i\) is the correct answer, \(f_{\mathbf{w}}(\mathbf{x}_i)\) is the model's prediction for input \(\mathbf{x}_i\), and \(\hat{p}_{i,c}\) is the probability the model gives to class \(c\).</p>
+<p>The weights are improved step by step with <strong>gradient descent</strong>: compute the gradient of the loss, which points uphill, and take a small step the other way. The step size \(\eta\) is the learning rate. Too small and training is slow; too large and it zig-zags or diverges.</p>
+<div class="eq">\[\mathbf{w}_{k+1} = \mathbf{w}_k - \eta\,\nabla_{\mathbf{w}} L(\mathbf{w}_k)\]</div>
+<figure class="article-figure"><img src="../images/resources/learning-roadmap/gradient-descent.png" width="1200" height="750" alt="Gradient descent on a two-weight loss surface. A small learning rate moves steadily to the minimum; a large one overshoots and zig-zags." loading="lazy"><figcaption>Gradient descent on a two-weight loss surface. A small learning rate moves steadily to the minimum; a large one overshoots and zig-zags.</figcaption></figure>
+<p>In practice you rarely write gradients by hand. A framework such as PyTorch computes them automatically. This is the training loop you will see in almost every project:</p>
+<pre><code class="language-python">import torch
+from torch import nn
+
+model = nn.Sequential(nn.Linear(4, 64), nn.ReLU(), nn.Linear(64, 1))
+loss_fn = nn.MSELoss()
+optimiser = torch.optim.Adam(model.parameters(), lr=1e-3)
+
+for epoch in range(100):
+    for x, y in train_loader:          # mini-batches of inputs and targets
+        prediction = model(x)
+        loss = loss_fn(prediction, y)  # how wrong the model is
+        optimiser.zero_grad()
+        loss.backward()                # gradients of the loss for every weight
+        optimiser.step()               # one gradient descent step</code></pre>
+<p>Always keep some data aside for <strong>validation</strong>. The training loss nearly always goes down; the validation loss tells you whether the model works on data it has not seen. When the validation loss starts to rise, the model is memorising the training data instead of learning, which is called overfitting.</p>
+<figure class="article-figure"><img src="../images/resources/learning-roadmap/loss-curves.png" width="1200" height="660" alt="Training and validation loss. Keep the model from the epoch where the validation loss is lowest." loading="lazy"><figcaption>Training and validation loss. Keep the model from the epoch where the validation loss is lowest.</figcaption></figure>
+<ul class="link-list">
+  <li><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener">Machine Learning Specialization (Andrew Ng)</a><span>The standard first course: regression, classification, neural networks.</span></li>
+  <li><a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener">Neural Networks (3Blue1Brown)</a><span>Visual explanation of networks, gradient descent and backpropagation.</span></li>
+  <li><a href="https://course.fast.ai/" target="_blank" rel="noopener">Practical Deep Learning for Coders (fast.ai)</a><span>Code-first course; train real models from the first lesson.</span></li>
+  <li><a href="https://d2l.ai/" target="_blank" rel="noopener">Dive into Deep Learning</a><span>Free interactive book with runnable PyTorch code.</span></li>
+  <li><a href="https://docs.pytorch.org/tutorials/" target="_blank" rel="noopener">PyTorch Tutorials</a><span>Official tutorials, from tensors to full training pipelines.</span></li>
+  <li><a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">Stanford CS231n</a><span>Deep learning for computer vision: detection, segmentation and more.</span></li>
+  <li><a href="https://huggingface.co/learn" target="_blank" rel="noopener">Hugging Face Learn</a><span>Free courses on transformers, computer vision and reinforcement learning.</span></li>
+  <li><a href="https://spinningup.openai.com/" target="_blank" rel="noopener">Spinning Up in Deep RL</a><span>A clear introduction to reinforcement learning, used for walking robots.</span></li>
+</ul>
+<h2>Stage 2: feedback control</h2>
+<p>Every motor, drone and robot dog runs a feedback loop: measure the error between where you are and where you want to be, and correct it. The PID controller is the place to start. The proportional term reacts to the error now, the integral term removes a steady offset, and the derivative term damps oscillation.</p>
+<div class="eq">\[u(t) = K_p\,e(t) + K_i \int_0^t e(\tau)\,d\tau + K_d\,\frac{de(t)}{dt}\]</div>
+<p>Here \(e(t) = r(t) - y(t)\) is the error between the target \(r\) and the measurement \(y\), and \(u\) is the command sent to the motor.</p>
+<pre><code class="language-python">class PID:
+    def __init__(self, kp, ki, kd, dt):
+        self.kp, self.ki, self.kd, self.dt = kp, ki, kd, dt
+        self.integral = 0.0
+        self.prev_error = 0.0
+
+    def update(self, target, measured):
+        error = target - measured
+        self.integral += error * self.dt
+        derivative = (error - self.prev_error) / self.dt
+        self.prev_error = error
+        return self.kp * error + self.ki * self.integral + self.kd * derivative</code></pre>
+<figure class="article-figure"><img src="../images/resources/learning-roadmap/pid-step.png" width="1200" height="660" alt="The same system under P, PD and PID control. Only the integral term removes the steady-state error." loading="lazy"><figcaption>The same system under P, PD and PID control. Only the integral term removes the steady-state error.</figcaption></figure>
+<ul class="link-list">
+  <li><a href="https://hades.mech.northwestern.edu/index.php/Modern_Robotics" target="_blank" rel="noopener">Modern Robotics (Lynch and Park)</a><span>Free book, videos and Coursera course on kinematics, dynamics and control.</span></li>
+  <li><a href="https://underactuated.mit.edu/" target="_blank" rel="noopener">Underactuated Robotics (MIT)</a><span>Russ Tedrake's course notes on control for legged and flying robots.</span></li>
+</ul>
+<h2>Stage 2: ROS 2 and simulation</h2>
+<p>ROS 2 is the software framework used on most research and competition robots. A robot program is split into <em>nodes</em> that exchange messages on <em>topics</em>: one node reads the LiDAR, another plans a path, another drives the motors. This minimal node publishes a message ten times a second:</p>
+<pre><code class="language-python">import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+
+class Talker(Node):
+    def __init__(self):
+        super().__init__(&#x27;talker&#x27;)
+        self.publisher = self.create_publisher(String, &#x27;chatter&#x27;, 10)
+        self.create_timer(0.1, self.tick)
+
+    def tick(self):
+        self.publisher.publish(String(data=&#x27;hello from the club robot&#x27;))
+
+
+rclpy.init()
+rclpy.spin(Talker())</code></pre>
+<p>Test new behaviour in simulation before it runs on hardware. It is faster, and nothing breaks.</p>
+<ul class="link-list">
+  <li><a href="https://docs.ros.org/en/jazzy/Tutorials.html" target="_blank" rel="noopener">ROS 2 Tutorials</a><span>Official beginner and intermediate tutorials (Jazzy release).</span></li>
+  <li><a href="https://gazebosim.org/docs/" target="_blank" rel="noopener">Gazebo</a><span>Open-source robot simulator that works with ROS 2.</span></li>
+  <li><a href="https://isaac-sim.github.io/IsaacLab/" target="_blank" rel="noopener">Isaac Lab</a><span>GPU simulation for robot learning, used to train legged robots.</span></li>
+</ul>
+<h2>Stage 3: your technical group</h2>
+<p>After the foundations, go deep in your own group. Each group page lists its tasks, key equations and what is expected at each tier.</p>
+<dl class="rows">
+  <div><dt><a href="../groups/mechanical.html">Mechanical Design</a></dt><dd>CAD from day one: work through the <a href="https://learn.onshape.com/" target="_blank" rel="noopener">Onshape Learning Center</a> or a SolidWorks or Fusion 360 tutorial, then statics, mechanics of materials and the kinematics chapters of <em>Modern Robotics</em>. Complete the Industrial Centre safety training before using machines.</dd></div>
+  <div><dt><a href="../groups/electronics.html">Electronics &amp; Embedded</a></dt><dd>Circuit basics, a first microcontroller project on STM32 or ESP32, then PCB design with the <a href="https://docs.kicad.org/" target="_blank" rel="noopener">KiCad documentation</a>, motor drivers and CAN bus.</dd></div>
+  <div><dt><a href="../groups/perception.html">Perception &amp; Sensors</a></dt><dd>Camera models and calibration, Kalman filters and sensor fusion, LiDAR point clouds and SLAM in ROS 2; computer vision from CS231n.</dd></div>
+  <div><dt><a href="../groups/software-ai.html">Software &amp; AI</a></dt><dd>C++ and ROS 2 in depth, path planning, model predictive control, deep learning with PyTorch and reinforcement learning in Isaac Lab.</dd></div>
+</dl>
+<h2>How to get help</h2>
+<p>Ask early. Bring your question, what you tried and the error message to your group mentor or the bi-weekly training session. If you find a better course or tutorial, tell us so we can add it to this page.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <p class="footer-brand"><img src="../images/logo/club-logo-192.png" width="40" height="40" alt=""><strong>PolyU FENG AI &amp; Robotics Club</strong><span>Faculty of Engineering, The Hong Kong Polytechnic University</span></p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../news.html">News</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../team.html">Team</a>
+          <a href="../qa.html">Q&amp;A</a>
+          <a href="../donate.html">Donate</a>
+          <a href="../join.html">Join Us</a>
+        </nav>
+      </div>
+      <div class="footer-row footer-bottom">
+        <span>&copy; 2026 PolyU FENG AI &amp; Robotics Club. All rights reserved.</span>
+        <span>Contact: <a href="mailto:airoboticsclubpolyu@gmail.com?cc=welson.wen@polyu.edu.hk">airoboticsclubpolyu@gmail.com</a> (cc <a href="mailto:welson.wen@polyu.edu.hk">welson.wen@polyu.edu.hk</a>)</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>
