@@ -1,155 +1,55 @@
 # PolyU AI & Robotics Club Website
 
-Official static website draft for the PolyU AI & Robotics Club. The site is built for GitHub Pages with plain HTML, CSS, JavaScript, Markdown event files, and local image assets.
+Static website of the PolyU FENG AI & Robotics Club, published with GitHub Pages. Plain HTML, one stylesheet and one script; no build step. The layout follows the [TAS Lab website](https://polyu-taslab.github.io/).
 
-## Overview
+## Pages
 
-This website introduces the club, its technical areas, projects, events, team structure, and joining information.
+- `index.html` - hero with the four robot platforms, key numbers, research directions, latest news, competition videos, supporting parties and the visitor map.
+- `about.html` - who we are, what we do, technical groups and member tiers.
+- `projects.html` - cover photo, current projects and how projects are reviewed.
+- `news.html` - dated news items with captioned photos, and the photo archive of earlier seasons.
+- `team.html` - leadership, co-supervisors, the TAS Lab mentor team, student committee and supporting parties.
+- `qa.html` - questions and answers.
+- `join.html` - joining steps, member tiers, promotion rules and reviews.
+- `events.html`, `past-seasons.html` and `competition.html` - redirects so old links keep working.
 
-Main pages:
+Photos of former members appear only on `news.html`.
 
-- `index.html` - homepage with hero, key numbers, club focus areas, featured projects, club life photos, popular questions, and recruitment call-to-action.
-- `about.html` - vision, technical areas, club structure, and a short summary of the three membership levels.
-- `projects.html` - project tracks with category filtering, plus competition tracks, preparation workflow, and roles.
-- `events.html` - upcoming and past events generated from Markdown files in `_event/`, plus the season-by-season archive.
-- `team.html` - faculty leadership, supervisors, mentors, student committee, technical groups, alumni, and supporting labs.
-- `qa.html` - questions and answers grouped by joining, time and levels, projects and competitions, and events and contact.
-- `join.html` - joining steps, full membership and review rules, and contact information.
-- `competition.html` and `past-seasons.html` - redirects to `projects.html#competitions` and `events.html#past-seasons` so old links keep working.
-
-Each piece of content lives on one page only. The full membership rules are on `join.html`; other pages link there instead of repeating them. Add new questions to `qa.html` rather than to individual pages.
-
-## Folder Structure
+## Folders
 
 ```text
-.
-├── index.html
-├── about.html
-├── projects.html
-├── competition.html
-├── events.html
-├── past-seasons.html
-├── team.html
-├── join.html
-├── _event/
-│   ├── _template.md
-│   └── *.md
-├── assets/
-│   ├── css/styles.css
-│   └── js/
-│       ├── site.js
-│       └── events.js
-├── images/
-│   ├── robotic_logo.svg
-│   ├── robotic_logo.jpg
-│   └── club/
-└── _config.yml
+assets/css/styles.css      shared styles
+assets/js/site.js          navigation, Q&A accordion, video embeds, visitor map
+assets/visitors/           world map data for the visitor map
+images/platforms/          home page platform tiles
+images/projects/           project cover and cards
+images/news/               photos for news items
+images/past-seasons/       2025-26 season photos (news page)
+images/club/               earlier-season photos (photo archive)
+images/people/             320 x 320 portraits for the team page
+images/partners/           supporting-party logos and white banner logos
 ```
 
-## Editing Pages
+## Common edits
 
-Each page is a standalone HTML file. Shared styling lives in `assets/css/styles.css`, and shared interaction behavior lives in `assets/js/site.js`.
+- **News item:** add an `<article class="article" id="...">` at the top of the list in `news.html`, add a matching link to the index pills at the top of the page, and replace the oldest item in the home page "Latest News" list.
+- **Person:** add a 320 x 320 JPG to `images/people/` and copy an existing `<article class="person">` card in `team.html`. Add the `key` class and the "Lead mentor" tag for lead mentors.
+- **Video:** copy a `<figure class="video">` block in `index.html` and change `data-youtube` to the YouTube video ID. The video loads only when clicked.
+- **Supporting party:** add a white-background logo to `images/partners/` and an `<li>` to the `logos` lists in `index.html` and `team.html`.
+- **Navigation or footer:** the header and footer are repeated in every page; update all pages together.
 
-Common edits:
+## Visitor map
 
-- Update navigation in each HTML page if a new page is added.
-- Update footer links in each HTML page if contact details change.
-- Update global colors, spacing, cards, buttons, and responsive layouts in `assets/css/styles.css`.
-- Update mobile navigation, filters, and FAQ behavior in `assets/js/site.js`.
+The map on the home page uses [GoatCounter](https://www.goatcounter.com/), the same as the TAS Lab site. To turn it on, create a GoatCounter site, create an API key with only "Read statistics" permission, and fill in `goatcounter` and `apiKey` at the top of `assets/js/site.js`. Until then the map shows an empty world map.
 
-## Events Workflow
-
-Events are stored as Markdown files in `_event/`. The Events page loads the files listed in `assets/js/events.js`, reads each front matter block, generates event cards, and opens full details in a dialog.
-
-To add a new event:
-
-1. Copy `_event/_template.md`.
-2. Rename it, for example `_event/robotics-demo-day.md`.
-3. Fill in the front matter:
-
-```yaml
----
-title: Robotics Demo Day
-date: TBC
-location: PolyU campus
-image: images/club/promotion-table.jpg
-tags: Events, Recruitment
-category: upcoming recruitment
-order: 50
----
-```
-
-4. Write the brief description immediately after the front matter. This first paragraph appears on the event card.
-5. Add the detailed body below it.
-6. Add the new file path to `EVENT_FILES` in `assets/js/events.js`.
-
-Useful event categories:
-
-- `upcoming`
-- `training`
-- `competition`
-- `recruitment`
-- `past`
-
-The `category` field can contain multiple filter words, for example:
-
-```yaml
-category: upcoming training
-```
-
-## Images
-
-Main image folders:
-
-- `images/robotic_logo.svg` - primary logo for header, footer, and favicon.
-- `images/robotic_logo.jpg` - social preview image.
-- `images/club/` - optimized club photos used across the site.
-
-Recommended image practice:
-
-- Use JPG for photos.
-- Keep large website images around 1200-1600 px wide.
-- Use descriptive filenames.
-- Always add meaningful `alt` text in HTML.
-- Prefer real club photos over generic graphics.
-
-## Running Locally
-
-Because the site loads event Markdown with `fetch()`, open it through a local server rather than directly from the filesystem when testing Events.
+## Running locally
 
 ```bash
-python3 -m http.server 8000
+python -m http.server 8000
 ```
 
-Then visit:
+Then open <http://localhost:8000/>.
 
-```text
-http://localhost:8000/
-```
+## Deployment
 
-Directly opening `index.html` works for most pages, but `events.html` needs a server for Markdown loading.
-
-## GitHub Pages Notes
-
-This project is designed for GitHub Pages.
-
-Important files:
-
-- `.nojekyll` keeps GitHub Pages from hiding folders that start with `_`, including `_event/`.
-- `_config.yml` includes `_event/` for compatibility.
-
-The `.github/workflows/deploy-pages.yml` workflow publishes the repository root when changes are pushed to `main`. It can also be started manually from the Actions tab.
-
-In the repository's **Settings > Pages > Build and deployment** section, set **Source** to **GitHub Actions**. After the workflow succeeds, GitHub Pages serves the uploaded static site artifact.
-
-## Maintenance Checklist
-
-Before publishing:
-
-- Check all navigation links.
-- Check the Events page through a local server.
-- Confirm images load and are not too large.
-- Review mobile layout.
-- Confirm contact emails are current.
-- Confirm event Markdown files are listed in `assets/js/events.js`.
-- Search for unused or old image references before deleting assets.
+`.github/workflows/deploy-pages.yml` publishes the repository root when changes are pushed to `main`. In **Settings > Pages**, the source must be **GitHub Actions**.
