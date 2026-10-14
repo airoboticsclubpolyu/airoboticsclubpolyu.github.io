@@ -1304,6 +1304,22 @@ p {
   gap: 16px;
 }
 
+.people.cols-4 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 868px;
+  margin: 0 auto;
+  gap: 18px;
+}
+
+.people.cols-4 .person {
+  width: 200px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 .person {
   display: flex;
   flex-direction: column;
@@ -2145,6 +2161,14 @@ p {
   .people {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  .people.cols-4 {
+    gap: 12px;
+  }
+
+  .people.cols-4 .person {
+    width: calc(50% - 6px);
   }
 
   .avatar {
