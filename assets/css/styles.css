@@ -279,9 +279,11 @@ p {
 /* Urgent notices */
 
 .urgent-notice {
-  padding: 16px 0;
+  padding: 32px 0;
   color: #fff;
   background: var(--red-dark);
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .urgent-notice p {
@@ -290,7 +292,9 @@ p {
 
 .urgent-notice strong {
   display: block;
-  font-size: 17px;
+  margin-bottom: 12px;
+  font-size: 34px;
+  line-height: 1.2;
 }
 
 .urgent-notice a {
